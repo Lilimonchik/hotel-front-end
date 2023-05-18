@@ -1,0 +1,25 @@
+<div class="content-top">
+  <div class="content-top-left">
+    <ul class="navigationmap">
+      <li><a routerLink="/" class="nagivationlink">Home</a></li>
+      <li><a class= "nagivationlink" href="">Category</a>
+        <ul>
+          <li><a class="nagivationlink">Bussiness</a></li>
+          <li><a class="nagivationlink">Econome</a></li>
+          <li><a class="nagivationlink">Luxe</a></li>
+        </ul>
+      </li>
+      <li><a class= "nagivationlink" routerLink="/rooms">Rooms</a></li>
+      <li><a href="" class="nagivationlink">About Us</a></li>
+      <li><a href="" class="nagivationlink">Contact</a></li>
+    </ul>
+  </div>
+  <div class="content-top-right" *ngIf="!isAuthenticated()">
+    <span class="registration"><a routerLink="/registration" class="registrationLink">Registration</a></span>
+    <span class="singIn"><a routerLink="/singIn" class="singInLink">Sing In</a></span>
+  </div>
+  <div class="content-top-right" *ngIf="isAuthenticated()">
+    <span class="Cabinet"><a routerLink="/usercabinet" class="CabinetLink">Cabinet</a></span>
+    <span class="LogOut"><a routerLink="/" class="LogOutLink" (click)="logOut()">LogOut</a></span>
+  </div>
+</div>

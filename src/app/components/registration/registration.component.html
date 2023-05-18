@@ -1,0 +1,57 @@
+<div class="content">
+  <div class="content-registration">
+    <form
+      class="formregistration"
+    >
+      <span class="spanregistration">Registration</span>
+      <input
+        type="text"
+        name="firstname"
+        class="firstname"
+        placeholder="First Name"
+        #FirstName
+      >
+      <input
+        type="text"
+        name="lastname"
+        class="lastname"
+        placeholder="Last Name"
+        #SecondName
+      >
+      <input
+        type="email"
+        name="emailuser"
+        class="email"
+        placeholder="Email"
+        #Email
+      >
+      <input
+        type="date"
+        name="birthday"
+        class="birthday"
+        #Birthday
+      >
+      <input
+        type="text"
+        name="username"
+        class="username"
+        placeholder="Username"
+        #UserName
+      >
+      <input
+        type="password"
+        name="password"
+        class="password"
+        placeholder="Password"
+        #Password
+      >
+      <span class="spanforsingin">Do you have an account? If yes, <a routerLink="/singIn">sing in</a></span>
+      <button
+        type="submit"
+        class="submitbutton"
+        (click)="registration(FirstName.value,SecondName.value,Email.value,Birthday.value,UserName.value,Password.value)"
+      >Send</button>
+    </form>
+  </div>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,16 @@
+<div class="order" *ngFor="let iteam of orders; let i = index">
+  <div class="orderleft">
+    <div class="idOrder">Id:{{i+1}}</div>
+    <div class="orderinfo">{{iteam.orderTime}}</div>
+  </div>
+  <div class="ordermain">
+          <span class="idOrder">
+            OrderId: {{iteam.orderId}}
+          </span>
+  </div>
+  <div class="orderright">
+    <div class="totalprice">
+      <span class="price">Total price: {{iteam.totalPrice}}</span>
+    </div>
+  </div>
+</div>

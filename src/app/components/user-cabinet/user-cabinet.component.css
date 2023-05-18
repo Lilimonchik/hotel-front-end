@@ -1,0 +1,44 @@
+.main-info {
+  max-width: 1500px;
+  min-width: 1000px;
+  max-height: 500px;
+  min-height: 500px;
+  margin-top: 5%;
+  display: flex;
+}
+.main-info .main-info-left {
+  display: flex;
+  width: 30%;
+}
+.main-info .main-info-left .ulnavigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  text-align: center;
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  max-height: 255px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.main-info .main-info-left .ulnavigation .navigator {
+  margin: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+  width: 170px;
+  height: 35px;
+  border: 1px solid #000000;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  color: cadetblue;
+}
+.main-info .main-info-right {
+  padding: 2%;
+  border-radius: 10px;
+  width: 70%;
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  overflow: auto;
+  margin-right: 5%;
+}
+
+/*# sourceMappingURL=user-cabinet.component.css.map */

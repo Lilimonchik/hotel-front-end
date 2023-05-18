@@ -1,0 +1,156 @@
+.content-top {
+  width: 100%;
+  height: 60px;
+  background: #fa6166;
+  display: flex;
+  justify-content: space-between;
+}
+.content-top .content-top-left {
+  margin-left: 100px;
+  margin-top: 20px;
+  width: 30%;
+  height: 30px;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.content-top .content-top-left .nagivationlink {
+  margin-left: 15px;
+  color: #fce77e;
+}
+.content-top .content-top-right {
+  text-align: end;
+  width: 30%;
+  height: 30px;
+  margin-top: 20px;
+  margin-right: 100px;
+}
+.content-top .content-top-right .registration {
+  margin-right: 10px;
+}
+.content-top .content-top-right .registration .registrationLink {
+  color: #fce77e;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.content-top .content-top-right .singIn {
+  margin-right: 100px;
+}
+.content-top .content-top-right .singIn .singInLink {
+  color: #fce77e;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+body {
+  background: #fcf7f7;
+}
+
+.content-mainphoto {
+  width: 100%;
+  height: 856px;
+  border: 1px solid #000;
+  background: url("../../../assets/2.jpeg");
+}
+.content-mainphoto .content-mainphoto-textonmainphoto {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 856px;
+  padding: 20px;
+}
+.content-mainphoto .content-mainphoto-textonmainphoto .centertext {
+  display: flex;
+  flex-direction: column;
+  margin-top: 400px;
+  margin-left: 150px;
+  width: 85%;
+  height: 500px;
+}
+.content-mainphoto .content-mainphoto-textonmainphoto .centertext .textinmain {
+  width: 65%;
+  height: 165px;
+  color: white;
+  font-size: 80px;
+  letter-spacing: 2px;
+}
+.content-mainphoto .content-mainphoto-textonmainphoto .centertext .textundermain {
+  width: 50%;
+  height: 40px;
+  padding-top: 9px;
+  color: white;
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+.content-mainphoto .content-mainphoto-textonmainphoto .centertext .buttominfo {
+  text-align: center;
+  width: 120px;
+  height: 30px;
+  background: white;
+  margin-top: 5px;
+}
+.content-mainphoto .content-mainphoto-textonmainphoto .centertext .buttominfo > a {
+  display: block;
+  margin-top: 5px;
+  font-size: 18px;
+  color: #000;
+}
+
+.content-center {
+  text-align: center;
+  width: 100%;
+  height: 35px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.content-center .aboutus {
+  font-size: 35px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 900;
+  color: #000;
+}
+
+.content-footer {
+  display: flex;
+}
+.content-footer .navigationmap {
+  width: 50%;
+  height: 500px;
+}
+.content-footer .navigationmap .map {
+  width: 100%;
+  height: 500px;
+}
+.content-footer .connectwithus {
+  margin-left: 2%;
+  width: 48%;
+  height: 500px;
+  border: 1px solid #000;
+  background: #4d4e56;
+}
+.content-footer .textconnect {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 300px;
+  margin-top: 40px;
+  margin-left: 150px;
+}
+.content-footer .textconnect > span {
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+.content-footer .textconnect .place {
+  font-size: 50px;
+  margin-left: 90px;
+  margin-bottom: 30px;
+}
+.content-footer .textconnect .number .callimg {
+  width: 30px;
+  height: 30px;
+}
+
+/*# sourceMappingURL=home.component.css.map */

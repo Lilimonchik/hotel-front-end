@@ -1,0 +1,13 @@
+<div class="content">
+<div class="addnewroom">
+  <form class="main-form">
+    <span class="textnewroom">New room</span>
+    <input type="text" class="price" placeholder="Price" #Price>
+    <input type="text" class="countPeople" placeholder="Count of people" #countpeople>
+    <input type="text" class="countRoom" placeholder="Count room" #countRoom>
+    <input type="text" class="count" placeholder="Count" #count>
+    <input type="text" class="category" placeholder="Category" #category>
+    <button type="submit" class="sendbuttom" (click)="createnewroom(Price.value,countpeople.value,countRoom.value,count.value,category.value)">Send</button>
+  </form>
+</div>
+</div>

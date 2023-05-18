@@ -1,0 +1,42 @@
+.order {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  min-width: 49%;
+  height: 150px;
+  border: 1px solid #000000;
+  padding: 10px;
+}
+.order .orderleft .idOrder {
+  font-size: 16px;
+  margin-top: 40px;
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
+}
+.order .orderleft .orderinfo {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
+  font-size: 16px;
+  margin-top: 60px;
+  margin-right: 10px;
+  width: 200px;
+}
+.order .ordermain {
+  height: 30px;
+  width: 900px;
+  margin-left: 50px;
+}
+.order .orderright {
+  margin-left: 350px;
+  height: 40px;
+  width: 800px;
+}
+.order .orderright .totalprice {
+  margin-top: 100px;
+  margin-left: 100px;
+  width: 100px;
+}
+.order .orderright .totalprice .price {
+  font-size: 16px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/*# sourceMappingURL=orders.component.css.map */

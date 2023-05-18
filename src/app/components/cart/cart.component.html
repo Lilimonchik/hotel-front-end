@@ -1,0 +1,21 @@
+<div class="content">
+  <div class="cart" *ngFor="let cartIteam of cartiteams; let i = index;">
+    <div class="cartleft">
+      <span class="idCartIteams">Id: {{i+1}}</span>
+    </div>
+    <div class="cartcenter">
+      <span class="roomId">RoomId: {{cartIteam.roomId}}</span>
+    </div>
+    <div class="cartright">
+      <span class="countroom">Count: {{cartIteam.count}}</span>
+      <span class="priceroom">Price: {{cartIteam.price}}</span>
+    </div>
+  </div>
+  <div class="totalprice">
+    <span class="total">Total price: {{price}}</span>
+  </div>
+  <div class="send">
+    <span class="blockcontinue"><a routerLink="/rooms">Continue</a></span>
+    <span class="blocksend"><a routerLink="/createorder">Confirm</a></span>
+  </div>
+</div>

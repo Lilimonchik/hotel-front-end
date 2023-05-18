@@ -1,0 +1,33 @@
+<div class="content">
+  <div class="undernavigachion">
+    <span class="textunder">Rooms</span>
+    <a routerLink="/newroom" class="addnewroom" *ngIf="isAuthenticated() && User.role==0">Add new room</a>
+  </div>
+  <div class="content-maincenter">
+    <div class="content-maincenter-left">
+      <span class="textfilter"> Filter</span>
+      <div class="blockfilter">
+        <ul class="filter">
+          <li class="filteriteam">Premiume</li>
+          <li class="filteriteam">Bissness</li>
+          <li class="filteriteam">Econome</li>
+          <li class="filteriteam">Luxe</li>
+          <li class="filteriteam">4 people</li>
+          <li class="filteriteam">2 rooms</li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-maincenter-right">
+      <div class="firstroom"  *ngFor="let rooms of Room">
+        <img class="room1" src="../../../assets/room1.jpeg" alt="room1">
+        <span class="nameroom1"><a href="/pages/aboutroom.html">{{rooms.categoryName}} Room</a></span>
+        <span class="undernameroom1">Partial Ocean View Suite With Balcony</span>
+        <div class="priceforgotel">
+          <span class="price">{{rooms.price}}</span>
+          <span class="fortime">USD/ Day</span>
+        </div>
+        <span class="buttombuy"><a class="buy" (click)="addCart(rooms.roomId,1)">Buy</a></span>
+      </div>
+    </div>
+  </div>
+</div>
