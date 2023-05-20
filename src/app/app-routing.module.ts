@@ -7,6 +7,9 @@ import {UserCabinetComponent} from "./components/user-cabinet/user-cabinet.compo
 import {RoomComponent} from "./components/room/room.component";
 import {RegistrationComponent} from "./components/registration/registration.component";
 import {HomeComponent} from "./components/home/home.component";
+import {CartComponent} from "./components/cart/cart.component";
+import {OrdersComponent} from "./components/orders/orders.component";
+import {InfoAboutUserComponent} from "./components/info-about-user/info-about-user.component";
 
 const routes: Routes =[
   {path:'', component:HomeComponent, title: 'home'},
@@ -16,6 +19,10 @@ const routes: Routes =[
   {path: 'user-cabinet',component:UserCabinetComponent, title: 'Usercabinet'},
   {path: 'newroom',component: AddNewRoomComponent, title:'NewRoom'},
   {path: 'createOrder', component: CreateOrderComponent, title:'NewOrder'},
+  {path: 'cart',component: CartComponent, title:'Cart'},
+  {path: 'order', component: OrdersComponent, title:'Order'},
+  {path: 'info-about-user',component: InfoAboutUserComponent, title: 'info-about-user'},
+
 
 
   {path: "**", redirectTo:''}

@@ -9,15 +9,29 @@ import {Router} from "@angular/router";
   styleUrls: ['./registration.component.css']
 })
 
-export class RegistrationComponent {
+export class RegistrationComponent implements OnInit{
 
 
   constructor(private auth: AuthService,
               private rout: Router) {
   }
 
-  registration(FirstName: string, SecondName: string, Email: string, Birthday: string, UserName: string, Password: string){
-    this.auth.registration(FirstName,SecondName,Email,Birthday,UserName,Password).subscribe(res=>{
+  registrationForm: FormGroup;
+
+  ngOnInit() {
+    this.registrationForm = new FormGroup({
+      firstName: new FormControl('',[Validators.required]),
+      secondName: new FormControl('',[Validators.required]),
+      email: new FormControl('',[Validators.required,Validators.email]),
+      birthday: new FormControl('',[Validators.required]),
+      userName: new FormControl('',[Validators.required]),
+      password: new FormControl('',[Validators.required])
+    })
+  }
+
+  registration(){
+    this.auth.registration(this.registrationForm.value).subscribe(res=>{
+      console.log("Successful!")
     }, error => {
       console.log(error);
     });

@@ -18,7 +18,7 @@ export class SingInComponent {
     this.auth.login(UserName,Password)
       .subscribe((res)=>{
         console.log(res.access_token.sub());
-        this.router.navigate(['/user-cabinet'])
+        this.router.navigate(['/cart'])
       },error => {
         alert("Wrong username or password!")
       })

@@ -2,13 +2,17 @@
   <div class="content-registration">
     <form
       class="formregistration"
+      [formGroup]="registrationForm"
+      (ngSubmit)="registration()"
     >
       <span class="spanregistration">Registration</span>
       <input
         type="text"
         name="firstname"
+        id="firstname"
         class="firstname"
         placeholder="First Name"
+        formControlName="firstName"
         #FirstName
       >
       <input
@@ -16,6 +20,7 @@
         name="lastname"
         class="lastname"
         placeholder="Last Name"
+        formControlName="secondName"
         #SecondName
       >
       <input
@@ -23,12 +28,14 @@
         name="emailuser"
         class="email"
         placeholder="Email"
+        formControlName="email"
         #Email
       >
       <input
         type="date"
         name="birthday"
         class="birthday"
+        formControlName="birthday"
         #Birthday
       >
       <input
@@ -36,6 +43,7 @@
         name="username"
         class="username"
         placeholder="Username"
+        formControlName="userName"
         #UserName
       >
       <input
@@ -43,13 +51,13 @@
         name="password"
         class="password"
         placeholder="Password"
+        formControlName="password"
         #Password
       >
-      <span class="spanforsingin">Do you have an account? If yes, <a routerLink="/singIn">sing in</a></span>
+      <span class="spanforsingin">Do you have an account? If yes, <a routerLink="/sing-in">sing in</a></span>
       <button
         type="submit"
         class="submitbutton"
-        (click)="registration(FirstName.value,SecondName.value,Email.value,Birthday.value,UserName.value,Password.value)"
       >Send</button>
     </form>
   </div>

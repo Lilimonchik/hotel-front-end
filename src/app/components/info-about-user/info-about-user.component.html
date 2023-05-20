@@ -1,12 +1,17 @@
-<div class="infoaboutuser">
-  <div class="leftinfo">
-    <span class="firstname">First Name: {{user?.firstName}}</span>
-    <span class="name">Second Name: {{user?.name}}</span>
-    <span class="email">Email: {{user?.email}}</span>
+<div class="content">
+  <div class="content-left">
+    <app-user-cabinet></app-user-cabinet>
   </div>
-  <div class="rightinfo">
-    <span class="birthday">Birthday: {{user?.birthday}}</span>
-    <span class="username">UserName: {{user?.userName}}</span>
-    <span class="paswword">Password: {{user?.password}}</span>
-  </div>
+  <div class="content-right">
+      <div class="leftinfo">
+        <span class="firstname">First Name: {{user?.firstName}}</span>
+        <span class="name">Second Name: {{user?.secondName}}</span>
+        <span class="email">Email: {{user?.email}}</span>
+      </div>
+      <div class="rightinfo">
+        <span class="birthday">Birthday: {{user?.birthday}}</span>
+        <span class="username">UserName: {{user?.userName}}</span>
+      </div>
+    </div>
 </div>
+

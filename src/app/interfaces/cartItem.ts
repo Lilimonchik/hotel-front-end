@@ -1,4 +1,4 @@
-export interface Cartiteams{
+export interface CartItem {
   cartIteamId: string
 
   userId: string

@@ -1,40 +1,52 @@
-.order {
+.content {
+  padding: 2%;
+  width: 100%;
+  display: flex;
+}
+.content .content-left {
+  width: 30%;
+}
+.content .content-right {
+  width: 70%;
+}
+.content .content-right .order {
   display: flex;
   justify-content: space-between;
   max-width: 100%;
   min-width: 49%;
   height: 150px;
-  border: 1px solid #000000;
   padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
 }
-.order .orderleft .idOrder {
+.content .content-right .order .orderleft .idOrder {
   font-size: 16px;
   margin-top: 40px;
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
 }
-.order .orderleft .orderinfo {
+.content .content-right .order .orderleft .orderinfo {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
   font-size: 16px;
   margin-top: 60px;
   margin-right: 10px;
   width: 200px;
 }
-.order .ordermain {
+.content .content-right .order .ordermain {
   height: 30px;
   width: 900px;
   margin-left: 50px;
 }
-.order .orderright {
+.content .content-right .order .orderright {
   margin-left: 350px;
   height: 40px;
   width: 800px;
 }
-.order .orderright .totalprice {
+.content .content-right .order .orderright .totalprice {
   margin-top: 100px;
   margin-left: 100px;
   width: 100px;
 }
-.order .orderright .totalprice .price {
+.content .content-right .order .orderright .totalprice .price {
   font-size: 16px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }

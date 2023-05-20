@@ -3,11 +3,11 @@ import {enviroment} from "../../../environments/enviroment";
 import {AuthService} from "../../services/auth.service";
 
 @Component({
-  selector: 'app-main-layout',
-  templateUrl: './main-layout.component.html',
-  styleUrls: ['./main-layout.component.scss']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class MainLayoutComponent {
+export class HeaderComponent {
   constructor(private auth: AuthService) {
   }
 

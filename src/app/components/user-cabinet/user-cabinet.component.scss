@@ -1,25 +1,17 @@
-.main-info {
-  max-width: 1500px;
-  min-width: 1000px;
-  max-height: 500px;
-  min-height: 500px;
-  margin-top: 5%;
+.main-info-left {
   display: flex;
-
-  .main-info-left {
-    display: flex;
-    width: 30%;
-
+  margin: 10%;
     .ulnavigation {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 50%;
+      width: 70%;
       text-align: center;
       box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
       max-height: 255px;
       border-radius: 10px;
       margin: 0 auto;
+      padding: 3%;
 
       .navigator {
         margin: auto;
@@ -32,15 +24,8 @@
         font-size: 30px;
         color: cadetblue;
       }
+      .navigator:hover{
+        color: black;
+      }
     }
   }
-
-  .main-info-right {
-    padding: 2%;
-    border-radius: 10px;
-    width: 70%;
-    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
-    overflow: auto;
-    margin-right: 5%;
-  }
-}

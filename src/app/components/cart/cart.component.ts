@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {RoomsstoreService} from "../../services/roomsstore.service";
-import {Cartiteams} from "../../interfaces/cartiteams";
+import {CartItem} from "../../interfaces/cartItem";
 import {CountService} from "../../services/count.service";
 
 @Component({
@@ -13,13 +13,13 @@ export class CartComponent implements OnInit{
   constructor(private cart: RoomsstoreService) {
   }
 
-  public cartiteams: Cartiteams[]=[];
+  public cartItems: CartItem[]=[];
 
   public price = 0;
 
   ngOnInit() {
     this.cart.getCartIteam().subscribe(res =>{
-      this.cartiteams = res;
+      this.cartItems = res;
       this.price = 0;
     });
     this.countTotal()
@@ -27,7 +27,7 @@ export class CartComponent implements OnInit{
 
   countTotal(){
       let totalPrice = 0;
-      for(let item of this.cartiteams){
+      for(let item of this.cartItems){
         totalPrice+=item.count*item.price;
       }
       this.price = totalPrice;

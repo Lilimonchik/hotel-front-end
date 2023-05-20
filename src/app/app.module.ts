@@ -9,7 +9,7 @@ import {RoomComponent} from "./components/room/room.component";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserCabinetComponent} from "./components/user-cabinet/user-cabinet.component";
-import { MainLayoutComponent } from './shared/main-layout/main-layout.component';
+import { HeaderComponent } from './shared/main-layout/header.component';
 import {AUTH_API_URL} from "./app.injection-tokens";
 import {enviroment} from "../environments/enviroment";
 import {JwtModule} from "@auth0/angular-jwt";
@@ -32,7 +32,7 @@ export function tokenGetter(){
     RegistrationComponent,
     RoomComponent,
     UserCabinetComponent,
-    MainLayoutComponent,
+    HeaderComponent,
     OrdersComponent,
     CartComponent,
     InfoAboutUserComponent,

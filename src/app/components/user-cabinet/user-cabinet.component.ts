@@ -3,9 +3,10 @@ import {ACCESS_TOKEN_KEY, AuthService} from "../../services/auth.service";
 import {RoomsstoreService} from "../../services/roomsstore.service";
 import {Order} from "../../interfaces/order";
 import {User} from "../../interfaces/user";
-import {Cartiteams} from "../../interfaces/cartiteams";
+import {CartItem} from "../../interfaces/cartItem";
 
 @Component({
+  selector: "app-user-cabinet",
   templateUrl:'user-cabinet.component.html',
   styleUrls: ['user-cabinet.component.css']
 })
@@ -21,7 +22,7 @@ export  class UserCabinetComponent implements OnInit{
 
   public users: User;
 
-  public  carts: Cartiteams[]=[];
+  public  carts: CartItem[]=[];
   ngOnInit(): void {
     this.user.getInfoAboutUser().subscribe(res=>{
       this.users = res;

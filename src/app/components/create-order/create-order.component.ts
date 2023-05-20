@@ -3,7 +3,7 @@ import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {AUTH_API_URL} from "../../app.injection-tokens";
 import {RoomsstoreService} from "../../services/roomsstore.service";
-import {Cartiteams} from "../../interfaces/cartiteams";
+import {CartItem} from "../../interfaces/cartItem";
 
 //import {CartComponent} from "../componentforusercabinet/cart/product.cart";
 
@@ -21,7 +21,7 @@ export class CreateOrderComponent implements OnInit{
 
   public promocode = " ";
 
-  public cartiteams: Cartiteams[] = [];
+  public cartiteams: CartItem[] = [];
   ngOnInit() {
     this.order.getCartIteam().subscribe(res =>{
       this.cartiteams = res;

@@ -16,10 +16,10 @@
   </div>
   <div class="content-top-right" *ngIf="!isAuthenticated()">
     <span class="registration"><a routerLink="/registration" class="registrationLink">Registration</a></span>
-    <span class="singIn"><a routerLink="/singIn" class="singInLink">Sing In</a></span>
+    <span class="singIn"><a routerLink="/sing-in" class="singInLink">Sing In</a></span>
   </div>
   <div class="content-top-right" *ngIf="isAuthenticated()">
-    <span class="Cabinet"><a routerLink="/usercabinet" class="CabinetLink">Cabinet</a></span>
+    <span class="Cabinet"><a routerLink="/cart" class="CabinetLink">Cabinet</a></span>
     <span class="LogOut"><a routerLink="/" class="LogOutLink" (click)="logOut()">LogOut</a></span>
   </div>
 </div>

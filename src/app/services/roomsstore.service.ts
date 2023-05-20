@@ -6,7 +6,7 @@ import {Observable} from "rxjs";
 import {Order} from "../interfaces/order";
 import {User} from "../interfaces/user";
 import {ACCESS_TOKEN_KEY} from "./auth.service";
-import {Cartiteams} from "../interfaces/cartiteams";
+import {CartItem} from "../interfaces/cartItem";
 @Injectable({
   providedIn: 'root',
 })
@@ -27,8 +27,8 @@ export class RoomsstoreService{
     return this.http.get<User>(`${this.apiUrl}LoginAction/GetInfoAboutUser`);
   }
 
-  getCartIteam():Observable<Cartiteams[]> {
-    return this.http.get<Cartiteams[]>(`${this.apiUrl}CartIteamAction/ShowUserCartIteam`);
+  getCartIteam():Observable<CartItem[]> {
+    return this.http.get<CartItem[]>(`${this.apiUrl}CartIteamAction/ShowUserCartIteam`);
   }
 
   createOrder(promocode: string){

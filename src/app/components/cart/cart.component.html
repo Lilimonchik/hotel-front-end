@@ -1,21 +1,30 @@
 <div class="content">
-  <div class="cart" *ngFor="let cartIteam of cartiteams; let i = index;">
-    <div class="cartleft">
-      <span class="idCartIteams">Id: {{i+1}}</span>
+  <div class="left">
+    <app-user-cabinet></app-user-cabinet>
+  </div>
+  <div class="right" *ngIf="price!=0">
+    <div class="cart" *ngFor="let cartItem of cartItems; let i = index;">
+      <div class="cartleft">
+        <span class="idCartIteams">Id: {{i+1}}</span>
+      </div>
+      <div class="cartcenter">
+        <span class="roomId">RoomId: {{cartItem.roomId}}</span>
+      </div>
+      <div class="cartright">
+        <span class="countroom">Count: {{cartItem.count}}</span>
+        <span class="priceroom">Price: {{cartItem.price}}</span>
+      </div>
     </div>
-    <div class="cartcenter">
-      <span class="roomId">RoomId: {{cartIteam.roomId}}</span>
+    <div class="totalprice">
+      <span class="total">Total price: {{price}}</span>
     </div>
-    <div class="cartright">
-      <span class="countroom">Count: {{cartIteam.count}}</span>
-      <span class="priceroom">Price: {{cartIteam.price}}</span>
+    <div class="send">
+      <span class="blockcontinue"><a routerLink="/rooms">Continue</a></span>
+      <span class="blocksend"><a routerLink="/createorder">Confirm</a></span>
     </div>
   </div>
-  <div class="totalprice">
-    <span class="total">Total price: {{price}}</span>
+  <div class="right" *ngIf="price==0">
+    <span class="text">No item in cart!</span>
   </div>
-  <div class="send">
-    <span class="blockcontinue"><a routerLink="/rooms">Continue</a></span>
-    <span class="blocksend"><a routerLink="/createorder">Confirm</a></span>
-  </div>
+
 </div>
