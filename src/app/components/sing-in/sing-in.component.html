@@ -1,12 +1,17 @@
 <div class="content">
   <div class="content-singin">
-    <form class="formsingin">
+    <form
+      class="formsingin"
+      [formGroup]="singInForm"
+      (ngSubmit)="login()"
+    >
       <span class="spansingin">Sing In</span>
       <input
         type="text"
         name="username"
         class="username"
         placeholder="Username"
+        formControlName="userName"
         #UserName
       >
       <input
@@ -14,13 +19,13 @@
         name="password"
         class="password"
         placeholder="Password"
+        formControlName="password"
         #Password
       >
       <span class="spanforregistration">Don't have an account? <a routerLink="/registration">Create account</a></span>
       <button
         type="submit"
         class="submitbutton"
-        (click)="login(UserName.value,Password.value)"
       >Send</button>
     </form>
   </div>

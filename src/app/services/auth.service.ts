@@ -7,6 +7,7 @@ import {JwtHelperService} from "@auth0/angular-jwt";
 import {Router} from "@angular/router";
 import jwt_decode from 'jwt-decode';
 import {User} from "../interfaces/user";
+import {singIn} from "../interfaces/singIn";
 export const ACCESS_TOKEN_KEY = 'bookstore_access_token';
 @Injectable({
   providedIn:'root'
@@ -19,10 +20,8 @@ export class AuthService{
               private jwtHelper: JwtHelperService,
               private router: Router) {
   }
-  login(UserName: string,Password: string): Observable<Token>{
-      return this.http.post<Token>(`${this.apiUrl}LogInAction/LogIn`,{
-        UserName, Password
-      }).pipe(
+  login(singIn: singIn): Observable<Token>{
+      return this.http.post<Token>(`${this.apiUrl}LogInAction/LogIn`,singIn).pipe(
         tap(token=>{
           localStorage.setItem(ACCESS_TOKEN_KEY,token.access_token);
         })

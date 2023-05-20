@@ -10,12 +10,20 @@ import {enviroment} from "../../../environments/enviroment";
   styleUrls: ['./sing-in.component.css']
 })
 
-export class SingInComponent {
+export class SingInComponent implements OnInit{
   constructor(private auth: AuthService,
               private router: Router) {
   }
-  login(UserName: string, Password: string){
-    this.auth.login(UserName,Password)
+  singInForm: FormGroup;
+  ngOnInit() {
+    this.singInForm = new FormGroup({
+      userName: new FormControl('',[Validators.required]),
+      password: new FormControl('',[Validators.required])
+    })
+  }
+
+  login(){
+    this.auth.login(this.singInForm.value)
       .subscribe((res)=>{
         console.log(res.access_token.sub());
         this.router.navigate(['/cart'])
