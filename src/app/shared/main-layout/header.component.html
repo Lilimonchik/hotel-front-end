@@ -1,18 +1,17 @@
 <div class="content-top">
   <div class="content-top-left">
-    <ul class="navigationmap">
-      <li><a routerLink="/" class="nagivationlink">Home</a></li>
-      <li><a class= "nagivationlink" href="">Category</a>
-        <ul>
-          <li><a class="nagivationlink">Bussiness</a></li>
-          <li><a class="nagivationlink">Econome</a></li>
-          <li><a class="nagivationlink">Luxe</a></li>
-        </ul>
-      </li>
-      <li><a class= "nagivationlink" routerLink="/rooms">Rooms</a></li>
-      <li><a href="" class="nagivationlink">About Us</a></li>
-      <li><a href="" class="nagivationlink">Contact</a></li>
-    </ul>
+    <div class="navigationmap">
+      <div class="navigationLink"><a routerLink="/" class="registrationLink">Home</a></div>
+      <div class="navigationLink"><a class="registrationLink" (mouseenter)="openMenu()">Category</a>
+        <div class="menu" *ngIf="menuOpen" (mouseleave)="openMenu()">
+          <div class="navigationLink2"><a href="" class="registrationLink">Bussiness</a></div>
+          <div class="navigationLink2"><a href="" class="registrationLink">Luxe</a></div>
+          <div class="navigationLink2"><a href="" class="registrationLink">Econome</a></div></div>
+      </div>
+      <div class="navigationLink"><a routerLink="/rooms" class="registrationLink">Rooms</a></div>
+      <div class="navigationLink"><a href="" class="registrationLink">About Us</a></div>
+      <div class="navigationLink"><a href="" class="registrationLink">Contact</a></div>
+    </div>
   </div>
   <div class="content-top-right" *ngIf="!isAuthenticated()">
     <span class="registration"><a routerLink="/registration" class="registrationLink">Registration</a></span>

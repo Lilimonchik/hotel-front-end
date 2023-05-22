@@ -17,19 +17,21 @@
   display: flex;
   justify-content: space-between;
 }
-.content-top .content-top-left .navigationmap .nagivationlink {
-  margin-left: 15px;
+.content-top .content-top-left .navigationmap .navigationLink {
+  max-width: 20%;
+  height: 100%;
   color: #fce77e;
 }
-.content-top .content-top-left .navigationmap .nagivationlink:hover {
-  background: white;
-  color: black;
+.content-top .content-top-left .navigationmap .navigationLink .registrationLink {
+  color: #fce77e;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-.content-top .content-top-left .navigationmap li ul {
-  display: none;
+.content-top .content-top-left .navigationmap .navigationLink .registrationLink:hover {
+  text-decoration: underline;
 }
-.content-top .content-top-left .navigationmap li:hover > ul {
-  display: block;
+.content-top .content-top-left .navigationmap .navigationLink .menu {
+  background: #fa6166;
 }
 .content-top .content-top-right {
   text-align: end;

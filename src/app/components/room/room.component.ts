@@ -22,15 +22,29 @@ export class RoomComponent implements OnInit {
 
   public User: User;
 
+  public RoomFitler: Rooms[] = [];
   public Count = 0;
   ngOnInit() {
     this.Rooms.getRoom().subscribe(res => {
       this.Room = res
+      console.log(res);
+      this.RoomFitler = res
     })
     if(this.isAuthenticated()){
       this.userinfo.getInfoAboutUser().subscribe(res=>{
         this.User = res;
       })
+    }
+  }
+  filterData(type: string){
+    if(type=="Premiume" || type=="Business" || type=="Econome"){
+      this.RoomFitler = this.Room.filter(x=>x.categoryName==type);
+    }
+    else if(Number(type)==4 || Number(type)==2){
+      this.RoomFitler = this.Room.filter(x=>x.countOfPeople==Number(type))
+    }
+    else{
+      this.RoomFitler = this.Room;
     }
   }
   isAuthenticated(){

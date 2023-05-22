@@ -4,4 +4,6 @@ export class Rooms{
   discount: number;
 
   roomId: string;
+
+  countOfPeople: number;
 }

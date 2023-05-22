@@ -4,7 +4,6 @@
   background: #fa6166;
   display: flex;
   justify-content: space-between;
-
   .content-top-left {
     margin-left: 100px;
     margin-top: 20px;
@@ -15,20 +14,22 @@
     .navigationmap{
       display: flex;
       justify-content: space-between;
-      .nagivationlink {
-        margin-left: 15px;
+      .navigationLink {
+        max-width: 20%;
+        height: 100%;
         color: #fce77e;
+        .registrationLink {
+          color: #fce77e;
+          font-size: 20px;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .registrationLink:hover{
+          text-decoration: underline;
+        }
+        .menu{
+          background: #fa6166;
+        }
       }
-      .nagivationlink:hover {
-        background: white;
-        color: black;
-      }
-    }
-    .navigationmap li ul {
-      display: none;
-    }
-    .navigationmap li:hover > ul{
-      display: block;
     }
   }
 
