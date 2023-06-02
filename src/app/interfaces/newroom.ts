@@ -4,4 +4,6 @@ export class Newroom{
   countRoom: number;
   count: number;
   category: string;
+
+  file: File;
 }

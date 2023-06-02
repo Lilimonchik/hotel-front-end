@@ -1,42 +1,59 @@
-.addnewroom{
-  .main-form{
+.content {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  .addnewroom {
     display: flex;
-    flex-direction: column;
-    margin-top: 10%;
-    margin-left: 30%;
-    width: 40%;
-    height: 40%;
-    border: 1px solid #000;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 10px;
-    .textnewroom{
-      margin-top: 10px;
-      font-size: 35px;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      text-align: center;
-    }
-    .price, .countPeople, .countRoom, .count, .category{
-        margin-left: 30%;
-        margin-top: 3%;
-        width: 40%;
-        height: 30px;
-        border-radius: 4px;
-    }
-    .category{
-      margin-bottom: 2%;
-    }
-    .sendbuttom{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+
+    .main-form {
+      margin-top: 20%;
+      padding: 20px;
       display: flex;
-      margin: auto;
       justify-content: center;
-      width: 100px;
-      height: 25px;
-      background: #fa6166;
-      color: #fce77e;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 20px;
+      justify-items: center;
+      flex-direction: column;
+      width: 100%;
+      border: 1px solid #000;
       border-radius: 5px;
+      box-shadow: 0px 10px 15px 0px;
+
+      .addnewroom {
+        display: flex;
+        font-size: 35px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        justify-content: center;
+        margin-bottom: 2%;
+      }
+
+      .names {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        .price {
+          width: 50%;
+        }
+
+        .countofpeople {
+          width: 50%;
+        }
+
+      }
+      .button{
+        margin-top: 2%;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        .buttonsubmit {
+          display: flex;
+          width: 30%;
+        }
+      }
+
     }
   }
 }

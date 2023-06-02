@@ -20,6 +20,10 @@ import {InfoAboutUserComponent} from "./components/info-about-user/info-about-us
 import {AddNewRoomComponent} from "./components/add-new-room/add-new-room.component";
 import {CreateOrderComponent} from "./components/create-order/create-order.component";
 import {SingInComponent} from "./components/sing-in/sing-in.component";
+import {AngularMaterialModuleModule} from "./angular-material-module/angular-material-module.module";
+import {MatInputModule} from "@angular/material/input";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from "@angular/material/button";
 
 export function tokenGetter(){
   return localStorage.getItem(ACCESS_TOKEN_KEY);
@@ -38,21 +42,24 @@ export function tokenGetter(){
     InfoAboutUserComponent,
     AddNewRoomComponent,
     CreateOrderComponent,
-
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter,
-        allowedDomains: enviroment.tokenWhiteListedDomains
-      }
-    })
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        FormsModule,
+        AngularMaterialModuleModule,
+        JwtModule.forRoot({
+            config: {
+                tokenGetter,
+                allowedDomains: enviroment.tokenWhiteListedDomains
+            }
+        }),
+        MatInputModule,
+        BrowserAnimationsModule,
+        MatButtonModule
+    ],
   providers: [
     {
       provide: AUTH_API_URL,

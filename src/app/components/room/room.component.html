@@ -20,7 +20,7 @@
     </div>
     <div class="content-maincenter-right">
       <div class="firstroom"  *ngFor="let rooms of RoomFitler">
-        <img class="room1" src="../../../assets/room1.jpeg" alt="room1">
+        <img class="room1" src="{{rooms.urlPhoto}}" alt="room1">
         <span class="nameroom1"><a href="/pages/aboutroom.html">{{rooms.categoryName}} Room</a></span>
         <span class="undernameroom1">Partial Ocean View Suite With Balcony</span>
         <div class="priceforgotel">

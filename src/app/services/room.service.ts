@@ -20,8 +20,7 @@ export class RoomService{
       RoomId,count
     });
   }
-  addnewroom(price: string, countPeople:string, countRoom:string, count:string,category:string){
-      return this.http.post(`${this.apiUrl}RoomAction/AddRoom`,{
-        price,countPeople,countRoom,count,category});
+  addnewroom(newRoom: FormData){
+      return this.http.post(`${this.apiUrl}RoomAction/AddRoom`,newRoom);
   }
 }

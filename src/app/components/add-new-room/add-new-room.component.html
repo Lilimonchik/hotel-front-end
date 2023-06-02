@@ -1,13 +1,34 @@
 <div class="content">
 <div class="addnewroom">
-  <form class="main-form">
-    <span class="textnewroom">New room</span>
-    <input type="text" class="price" placeholder="Price" #Price>
-    <input type="text" class="countPeople" placeholder="Count of people" #countpeople>
-    <input type="text" class="countRoom" placeholder="Count room" #countRoom>
-    <input type="text" class="count" placeholder="Count" #count>
-    <input type="text" class="category" placeholder="Category" #category>
-    <button type="submit" class="sendbuttom" (click)="createnewroom(Price.value,countpeople.value,countRoom.value,count.value,category.value)">Send</button>
+  <form class="main-form" [formGroup]="addNewRoom" (ngSubmit)="createnewroom()">
+    <span class="addnewroom">Add New Room</span>
+    <div class="names">
+      <mat-form-field class="price">
+        <mat-label>Price</mat-label>
+        <input matInput type="text" formControlName="price" required>
+        <mat-error *ngIf="">Input price</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label class="countofpeople">Count of people</mat-label>
+        <input matInput type="text" formControlName="countOfPeople" required>
+      </mat-form-field>
+    </div>
+    <mat-form-field>
+      <mat-label>Count rooms</mat-label>
+      <input matInput type="text" formControlName="countRoom" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Count</mat-label>
+      <input matInput type="text" formControlName="count" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <input matInput type="text" formControlName="category" required>
+    </mat-form-field>
+    <input type="file" (change)="uploadFile($event)" required>
+    <div class="button">
+      <button mat-raised-button color="warn" class="buttonsubmit" (click)="createnewroom()">Submit</button>
+    </div>
   </form>
 </div>
 </div>
