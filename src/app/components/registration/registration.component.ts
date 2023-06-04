@@ -18,6 +18,8 @@ export class RegistrationComponent implements OnInit{
 
   registrationForm: FormGroup;
 
+  public isRegistration: boolean = false;
+
   ngOnInit() {
     this.registrationForm = new FormGroup({
       firstName: new FormControl('',[Validators.required]),
@@ -30,10 +32,12 @@ export class RegistrationComponent implements OnInit{
   }
 
   registration(){
+    this.isRegistration = true;
     this.auth.registration(this.registrationForm.value).subscribe(res=>{
       console.log("Successful!")
     }, error => {
       console.log(error);
+      this.isRegistration = false;
     });
     this.rout.navigate(["/sing-in"]);
   }

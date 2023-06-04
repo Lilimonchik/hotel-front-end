@@ -2,61 +2,76 @@
   <div class="content-registration">
     <form
       class="formregistration"
+      #formcontrol="ngForm"
       [formGroup]="registrationForm"
       (ngSubmit)="registration()"
+      autocomplete="off"
     >
       <span class="spanregistration">Registration</span>
-      <input
-        type="text"
-        name="firstname"
-        id="firstname"
-        class="firstname"
-        placeholder="First Name"
-        formControlName="firstName"
-      >
-      <input
-        type="text"
-        name="lastname"
-        class="lastname"
-        placeholder="Last Name"
-        formControlName="secondName"
-      >
-      <input
-        type="email"
-        name="emailuser"
-        class="email"
-        placeholder="Email"
-        formControlName="email"
-        #Email
-      >
-      <input
-        type="date"
-        name="birthday"
-        class="birthday"
-        formControlName="birthday"
-        #Birthday
-      >
-      <input
-        type="text"
-        name="username"
-        class="username"
-        placeholder="Username"
-        formControlName="userName"
-        #UserName
-      >
-      <input
+      <div class="names">
+        <mat-form-field appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input
+            type="text"
+            class="firstname"
+            formControlName="firstName"
+            matInput
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input
+          type="text"
+          class="lastname"
+          formControlName="secondName"
+          matInput
+        >
+      </mat-form-field>
+      </div>
+      <div class="emailAndDate">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            class="email"
+            formControlName="email"
+            matInput
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Birthday</mat-label>
+          <input
+            type="date"
+            class="birthday"
+            formControlName="birthday"
+            matInput
+          >
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline">
+        <mat-label>UserName</mat-label>
+        <input
+          type="text"
+          class="username"
+          formControlName="userName"
+          matInput
+        >
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
         type="password"
-        name="password"
         class="password"
-        placeholder="Password"
         formControlName="password"
-        #Password
+        matInput
       >
-      <span class="spanforsingin">Do you have an account? If yes, <a routerLink="/sing-in">sing in</a></span>
-      <button
-        type="submit"
-        class="submitbutton"
-      >Send</button>
+      </mat-form-field>
+
+      <button mat-raised-button color="warn" class="send" [disabled]="!formcontrol.valid" routerLink="/sing-in">
+       <span *ngIf="!isRegistration">Send</span>
+        <mat-spinner *ngIf="isRegistration" diameter="30"></mat-spinner>
+      </button>
     </form>
   </div>
   <router-outlet></router-outlet>

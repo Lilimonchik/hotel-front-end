@@ -6,27 +6,36 @@
       (ngSubmit)="login()"
     >
       <span class="spansingin">Sing In</span>
-      <input
+      <mat-form-field appearance="outline">
+        <mat-label>User Name</mat-label>
+        <input
         type="text"
-        name="username"
         class="username"
         placeholder="Username"
         formControlName="userName"
-        #UserName
+        matInput
       >
-      <input
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
         type="password"
-        name="password"
         class="password"
         placeholder="Password"
         formControlName="password"
-        #Password
+        matInput
       >
+      </mat-form-field>
       <span class="spanforregistration">Don't have an account? <a routerLink="/registration">Create account</a></span>
       <button
-        type="submit"
         class="submitbutton"
-      >Send</button>
+        mat-raised-button
+        color="warn"
+        [disabled]="!singInForm.valid"
+      >
+        <span *ngIf="!isSingIn">Send</span>
+        <mat-spinner *ngIf="isSingIn" diameter="30"></mat-spinner>
+      </button>
     </form>
   </div>
 </div>

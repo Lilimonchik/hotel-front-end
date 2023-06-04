@@ -1,24 +1,6 @@
-<div class="content-top">
-  <div class="content-top-left">
-    <div class="navigationmap">
-      <div class="navigationLink"><a routerLink="/" class="registrationLink">Home</a></div>
-      <div class="navigationLink"><a class="registrationLink" (mouseenter)="openMenu()">Category</a>
-        <div class="menu" *ngIf="menuOpen" (mouseleave)="openMenu()">
-          <div class="navigationLink2"><a href="" class="registrationLink">Bussiness</a></div>
-          <div class="navigationLink2"><a href="" class="registrationLink">Luxe</a></div>
-          <div class="navigationLink2"><a href="" class="registrationLink">Econome</a></div></div>
-      </div>
-      <div class="navigationLink"><a routerLink="/rooms" class="registrationLink">Rooms</a></div>
-      <div class="navigationLink"><a href="" class="registrationLink">About Us</a></div>
-      <div class="navigationLink"><a href="" class="registrationLink">Contact</a></div>
-    </div>
-  </div>
-  <div class="content-top-right" *ngIf="!isAuthenticated()">
-    <span class="registration"><a routerLink="/registration" class="registrationLink">Registration</a></span>
-    <span class="singIn"><a routerLink="/sing-in" class="singInLink">Sing In</a></span>
-  </div>
-  <div class="content-top-right" *ngIf="isAuthenticated()">
-    <span class="Cabinet"><a routerLink="/cart" class="CabinetLink">Cabinet</a></span>
-    <span class="LogOut"><a routerLink="/" class="LogOutLink" (click)="logOut()">LogOut</a></span>
-  </div>
+<div class="content">
+  <mat-toolbar>
+    <button mat-icon-button></button>
+  </mat-toolbar>
+
 </div>

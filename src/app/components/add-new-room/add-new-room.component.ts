@@ -15,6 +15,8 @@ export class AddNewRoomComponent implements OnInit{
   addNewRoom: FormGroup;
 
   urlPhoto: File;
+
+  isLoading: boolean = false;
   ngOnInit() {
     this.addNewRoom = new FormGroup({
       price: new FormControl('',[Validators.required]),
@@ -25,6 +27,7 @@ export class AddNewRoomComponent implements OnInit{
     })
   }
   createnewroom(){
+    this.isLoading = true;
     const formValue = this.addNewRoom.value;
     const db = new FormData();
     db.append("price",formValue.price)
@@ -33,10 +36,15 @@ export class AddNewRoomComponent implements OnInit{
     db.append("count",formValue.count)
     db.append("category",formValue.category)
     db.append("fileUrl",this.urlPhoto)
-      this.newroom.addnewroom(db).subscribe(res =>{
+      this.newroom.addnewroom(db).subscribe((res) =>{
         alert("Successful!");
-      });
-      this.rout.navigate(["/rooms"])
+        this.rout.navigate(["/rooms"])
+      }, error => {
+        alert("Bad request!")
+        this.isLoading = false;
+
+    }
+      );
 }
   uploadFile(event){
     this.urlPhoto = event.target.files[0];

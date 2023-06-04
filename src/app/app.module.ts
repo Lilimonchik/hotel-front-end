@@ -24,6 +24,11 @@ import {AngularMaterialModuleModule} from "./angular-material-module/angular-mat
 import {MatInputModule} from "@angular/material/input";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 export function tokenGetter(){
   return localStorage.getItem(ACCESS_TOKEN_KEY);
@@ -43,23 +48,28 @@ export function tokenGetter(){
     AddNewRoomComponent,
     CreateOrderComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-        FormsModule,
-        AngularMaterialModuleModule,
-        JwtModule.forRoot({
-            config: {
-                tokenGetter,
-                allowedDomains: enviroment.tokenWhiteListedDomains
-            }
-        }),
-        MatInputModule,
-        BrowserAnimationsModule,
-        MatButtonModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AngularMaterialModuleModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter,
+        allowedDomains: enviroment.tokenWhiteListedDomains
+      }
+    }),
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatProgressSpinnerModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule
+  ],
   providers: [
     {
       provide: AUTH_API_URL,

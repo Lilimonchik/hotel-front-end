@@ -15,6 +15,7 @@ export class SingInComponent implements OnInit{
               private router: Router) {
   }
   singInForm: FormGroup;
+  public isSingIn: boolean = false;
   ngOnInit() {
     this.singInForm = new FormGroup({
       userName: new FormControl('',[Validators.required]),
@@ -23,12 +24,14 @@ export class SingInComponent implements OnInit{
   }
 
   login(){
+    this.isSingIn = true;
     this.auth.login(this.singInForm.value)
       .subscribe((res)=>{
         console.log(res.access_token.sub());
         this.router.navigate(['/cart'])
       },error => {
         alert("Wrong username or password!")
+        this.isSingIn = false;
       })
   }
   logout(){
