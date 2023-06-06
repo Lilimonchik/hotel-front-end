@@ -10,7 +10,10 @@ import {AuthService} from "../../services/auth.service";
 export class HeaderComponent {
   constructor(private auth: AuthService) {
   }
+  opened : boolean = false;
   menuOpen: boolean = false;
+
+  showFiller = false;
 
   isAuthenticated(){
     return this.auth.isAuthenticated();

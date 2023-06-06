@@ -1,25 +1,45 @@
 <div class="content">
   <div class="undernavigachion">
     <span class="textunder">Rooms</span>
-    <a routerLink="/newroom" class="addnewroom" *ngIf="isAuthenticated() && User.role==0">Add new room</a>
   </div>
+  <button mat-raised-button routerLink="/newroom" class="addnewroom" *ngIf="isAuthenticated() && User.role==0">Add new room</button>
   <div class="content-maincenter">
-    <div class="content-maincenter-left">
-      <span class="textfilter"> Filter</span>
-      <div class="blockfilter">
-        <ul class="filter">
-          <a (click)="filterData('Premiume')"><li class="filteriteam">Premiume</li></a>
-          <a  (click)="filterData('Business')"><li class="filteriteam">Bissness</li></a>
-          <a  (click)="filterData('Econome')"><li class="filteriteam">Econome</li></a>
-          <a (click)="filterData('Luxe')"><li class="filteriteam">Luxe</li></a>
-          <a (click)="filterData('4')"><li class="filteriteam">4 people</li></a>
-          <a (click)="filterData('2')"><li class="filteriteam">2 rooms</li></a>
-          <a (click)="filterData('')" ><li class="filteriteam">Reset</li></a>
-        </ul>
-      </div>
+   <div class="content-maincenter-left">
+     <span class="textfilter"> Filter</span>
+     <mat-list class="list">
+       <mat-list-item><button mat-raised-button class="list-iteam" (click)="filterData('Premiume')">Premiume</button></mat-list-item>
+       <mat-list-item><button mat-raised-button class="list-iteam" (click)="filterData('Business')">Business</button></mat-list-item>
+       <mat-list-item><button mat-raised-button class="list-iteam" (click)="filterData('Premiume')">Premiume</button></mat-list-item>
+       <mat-list-item><button mat-raised-button class="list-iteam" (click)="filterData('Premiume')">Premiume</button></mat-list-item>
+       <mat-list-item><button mat-raised-button class="list-iteam" (click)="filterData('Premiume')">Premiume</button></mat-list-item>
+     </mat-list>
     </div>
     <div class="content-maincenter-right">
-      <div class="firstroom"  *ngFor="let rooms of RoomFitler">
+     <mat-card class="room" *ngFor="let rooms of RoomFitler">
+       <img mat-card-image src="{{rooms.urlPhoto}}" class="photo" alt="room">
+       <mat-card-header>
+         <mat-card-title class="name">{{rooms.categoryName + " Room"}}</mat-card-title>
+       </mat-card-header>
+       <mat-card-content>
+       </mat-card-content>
+       <mat-card-actions>
+       </mat-card-actions>
+     </mat-card>
+    </div>
+    <!--<div class="content-maincenter-right">
+      <mat-card class="card" *ngFor="let room of RoomFitler">
+        <mat-card-header>
+          <h1>sdd</h1>
+        </mat-card-header>
+        <img src="{{room.urlPhoto}}" alt="">
+        <mat-card-content>
+          <h1>Lorem</h1>
+        </mat-card-content>
+        <mat-card-actions>
+          <button>Click</button>
+        </mat-card-actions>
+      </mat-card>0-->
+      <!-- <div class="firstroom"  *ngFor="let rooms of RoomFitler">
         <img class="room1" src="{{rooms.urlPhoto}}" alt="room1">
         <span class="nameroom1"><a href="/pages/aboutroom.html">{{rooms.categoryName}} Room</a></span>
         <span class="undernameroom1">Partial Ocean View Suite With Balcony</span>
@@ -28,7 +48,6 @@
           <span class="fortime">USD/ Day</span>
         </div>
         <span class="buttombuy"><a class="buy" (click)="addCart(rooms.roomId,1)">Buy</a></span>
-      </div>
+      </div> -->
     </div>
   </div>
-</div>

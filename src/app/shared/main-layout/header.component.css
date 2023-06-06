@@ -1,3 +1,51 @@
-
+.content {
+  max-width: 2000px;
+}
+.content .sidenav {
+  display: none;
+}
+.content .sidenav .toolbar {
+  width: 100%;
+  background: #fa6166;
+  color: #fce77e;
+}
+.content .sidenav .toolbar .spacer {
+  flex: 1 1 auto;
+}
+.content .sidenav .toolbar .registration {
+  margin-right: 1%;
+}
+@media (max-width: 650px) {
+  .content .sidenav {
+    display: block;
+  }
+  .content .sidenav span {
+    font-size: 14px;
+    padding: 3px;
+  }
+}
+@media (max-width: 390px) {
+  .content button {
+    font-size: 11px;
+  }
+}
+.content .laptop-content {
+  display: flex;
+  padding: 2%;
+  background: #fa6166;
+  color: #fce77e;
+}
+.content .laptop-content .routLink {
+  color: #fce77e;
+  padding-right: 4%;
+}
+.content .laptop-content .spacer {
+  flex: 1 1 auto;
+}
+@media (max-width: 650px) {
+  .content .laptop-content {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=header.component.css.map */

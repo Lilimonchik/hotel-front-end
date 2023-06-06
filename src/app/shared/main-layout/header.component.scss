@@ -1,0 +1,62 @@
+.content{
+  max-width: 2000px;
+  .sidenav{
+    display: none;
+    .toolbar{
+      width: 100%;
+      background: #fa6166;
+      color: #fce77e;
+      .menu-button{
+       // display: none;
+      }
+      .name-hotel{
+        //display: none;
+      }
+      .spacer{
+       flex: 1 1 auto;
+      }
+      .registration{
+        margin-right: 1%;
+      }
+    }
+  }
+@media (max-width:650px) {
+  .sidenav {
+    display: block;
+
+    span {
+      font-size: 14px;
+      padding: 3px;
+    }
+  }
+}
+@media (max-width:390px) {
+  button{
+    font-size: 11px;
+  }
+}
+  .laptop-content{
+    display: flex;
+    padding: 2%;
+    background: #fa6166;
+    color: #fce77e;
+    .routLink{
+      color: #fce77e;
+      padding-right: 4%;
+  }
+    .left-content{
+
+    }
+    .spacer{
+      flex: 1 1 auto;
+    }
+    .right-content{
+
+    }
+  }
+  @media (max-width:650px) {
+    .laptop-content{
+      display: none;
+    }
+  }
+}
