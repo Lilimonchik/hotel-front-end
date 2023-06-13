@@ -35,13 +35,20 @@
   background: #fa6166;
   color: #fce77e;
 }
-.content .laptop-content .routLink {
+.content .laptop-content .left-content {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+.content .laptop-content .left-content .routLink {
+  margin-left: 15px;
+  display: flex;
   color: #fce77e;
   padding-right: 4%;
-  transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease;
 }
-.content .laptop-content .routLink:hover {
-  transform: scale(1.1) translate(5px);
+.content .laptop-content .left-content .routLink:hover {
+  transform: scale(1.4);
 }
 .content .laptop-content .spacer {
   flex: 1 1 auto;

@@ -41,16 +41,21 @@
     padding: 2%;
     background: #fa6166;
     color: #fce77e;
-    .routLink{
-      color: #fce77e;
-      padding-right: 4%;
-      transition: transform 500ms ease-in-out;
-  }
-    .routLink:hover{
-      transform: scale(1.1) translate(5px);
-    }
     .left-content{
+      width: 30%;
+      display: flex;
+      justify-content: space-between;
+      .routLink{
+        margin-left: 15px;
+        display: flex;
+        color: #fce77e;
+        padding-right: 4%;
+        transition: transform 500ms ease;
 
+      }
+      .routLink:hover{
+        transform: scale(1.4);
+      }
     }
     .spacer{
       flex: 1 1 auto;
