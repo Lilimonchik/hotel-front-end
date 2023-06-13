@@ -1,0 +1,59 @@
+<div class="content">
+  <form
+    class="formregistration"
+    [formGroup]="registrationForm"
+    (ngSubmit)="registration()"
+  >
+    <span class="registration"> Registration</span>
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="firstName"
+      >
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Second Name</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="secondName"
+      >
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        matInput
+        formControlName="email"
+      >
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Birthday</mat-label>
+      <input
+        type="date"
+        matInput
+        formControlName="birthday"
+      >
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>UserName</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="userName"
+      >
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        type="password"
+        matInput
+        formControlName="password"
+      >
+    </mat-form-field>
+    <span class="spanforregistration">If you have an account, <a routerLink="/sing-in">sing in</a></span>
+    <button mat-raised-button class="sendregistration"  color="warn" type="submit" [disabled]="!registrationForm.valid">Send</button>
+  </form>
+</div>

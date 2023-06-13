@@ -1,78 +1,87 @@
 <div class="content">
-  <div class="content-registration">
-    <form
-      class="formregistration"
-      #formcontrol="ngForm"
-      [formGroup]="registrationForm"
-      (ngSubmit)="registration()"
-      autocomplete="off"
-    >
-      <span class="spanregistration">Registration</span>
-      <div class="names">
+  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center" animationDuration="1000ms">
+    <mat-tab label="Registration">
+      <form
+        [formGroup]="registrationForm"
+        (ngSubmit)="registration()"
+        class="formregistration"
+      >
+        <span class="registration"> Registration</span>
         <mat-form-field appearance="outline">
           <mat-label>First Name</mat-label>
           <input
-            type="text"
-            class="firstname"
-            formControlName="firstName"
             matInput
+            type="text"
+            formControlName="firstName"
           >
         </mat-form-field>
         <mat-form-field appearance="outline">
-        <mat-label>Last Name</mat-label>
-        <input
-          type="text"
-          class="lastname"
-          formControlName="secondName"
-          matInput
-        >
-      </mat-form-field>
-      </div>
-      <div class="emailAndDate">
+          <mat-label>Second Name</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="secondName"
+          >
+        </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
           <input
             type="email"
-            class="email"
-            formControlName="email"
             matInput
+            formControlName="email"
           >
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Birthday</mat-label>
           <input
             type="date"
-            class="birthday"
-            formControlName="birthday"
             matInput
+            formControlName="birthday"
           >
         </mat-form-field>
-      </div>
-
-      <mat-form-field appearance="outline">
-        <mat-label>UserName</mat-label>
-        <input
-          type="text"
-          class="username"
-          formControlName="userName"
-          matInput
-        >
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Password</mat-label>
-        <input
-        type="password"
-        class="password"
-        formControlName="password"
-        matInput
+        <mat-form-field appearance="outline">
+          <mat-label>UserName</mat-label>
+          <input
+            type="text"
+            matInput
+            formControlName="userName"
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            type="password"
+            matInput
+            formControlName="password"
+          >
+        </mat-form-field>
+        <button mat-raised-button class="sendregistration" type="submit" color="warn" [disabled]="!registrationForm.valid">Send</button>
+      </form>
+    </mat-tab>
+    <mat-tab label="Sing In">
+      <form
+        [formGroup]="singInForm"
+        (ngSubmit)="singIn()"
+        class="sing-in"
       >
-      </mat-form-field>
-
-      <button mat-raised-button color="warn" class="send" [disabled]="!formcontrol.valid" routerLink="/sing-in">
-       <span *ngIf="!isRegistration">Send</span>
-        <mat-spinner *ngIf="isRegistration" diameter="30"></mat-spinner>
-      </button>
-    </form>
-  </div>
-  <router-outlet></router-outlet>
+        <span class="spansingin">Sing In</span>
+        <mat-form-field appearance="outline">
+          <mat-label>User Name</mat-label>
+          <input
+            type="text"
+            matInput
+            formControlName="userName"
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            type="password"
+            formControlName="password"
+          matInput>
+        </mat-form-field>
+        <button mat-raised-button color="warn" [disabled]="!singInForm.valid">Send</button>
+      </form>
+    </mat-tab>
+  </mat-tab-group>
 </div>

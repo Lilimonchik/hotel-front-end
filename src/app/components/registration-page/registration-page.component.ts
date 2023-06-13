@@ -1,26 +1,22 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {RoomComponent} from "../room/room.component";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-registration',
-  templateUrl:'./registration.component.html',
-  styleUrls: ['./registration.component.css']
+  selector: 'app-registration-page',
+  templateUrl: './registration-page.component.html',
+  styleUrls: ['./registration-page.component.scss']
 })
-
-export class RegistrationComponent implements OnInit{
-
+export class RegistrationPageComponent implements OnInit{
 
   constructor(private auth: AuthService,
               private rout: Router) {
   }
-
   registrationForm: FormGroup;
 
   public isRegistration: boolean = false;
-
-  public singInForm: FormGroup;
 
   ngOnInit() {
     this.registrationForm = new FormGroup({
@@ -28,10 +24,6 @@ export class RegistrationComponent implements OnInit{
       secondName: new FormControl('',[Validators.required]),
       email: new FormControl('',[Validators.required,Validators.email]),
       birthday: new FormControl('',[Validators.required]),
-      userName: new FormControl('',[Validators.required]),
-      password: new FormControl('',[Validators.required])
-    })
-    this.singInForm = new FormGroup({
       userName: new FormControl('',[Validators.required]),
       password: new FormControl('',[Validators.required])
     })
@@ -46,8 +38,5 @@ export class RegistrationComponent implements OnInit{
       console.log(error);
       this.isRegistration = false;
     });
-  }
-  singIn(){
-
   }
 }

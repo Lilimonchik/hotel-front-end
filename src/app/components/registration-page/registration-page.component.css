@@ -1,0 +1,43 @@
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 4%;
+}
+.content .formregistration {
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 10px 15px 0px;
+  max-width: 550px;
+  min-width: 150px;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 4%;
+  border: 1px solid;
+}
+.content .formregistration .registration {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin-bottom: 2%;
+}
+.content .formregistration .spanforregistration {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.content .formregistration .sendregistration {
+  margin-top: 6px;
+}
+@media (max-width: 780px) {
+  .content .formregistration .registration {
+    font-size: 25px;
+  }
+}
+
+/*# sourceMappingURL=registration-page.component.css.map */

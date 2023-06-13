@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  padding: 4%;
 }
 .content .content-singin {
   max-width: 550px;
@@ -15,7 +16,7 @@
 .content .content-singin .formsingin {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 2%;
 }
 .content .content-singin .formsingin .username, .content .content-singin .formsingin .password {
   width: 100%;
@@ -28,6 +29,11 @@
   font-size: 35px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   margin-bottom: 2%;
+}
+@media (max-width: 780px) {
+  .content .content-singin .formsingin .spansingin {
+    font-size: 22px;
+  }
 }
 .content .content-singin .formsingin .spanforregistration {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
