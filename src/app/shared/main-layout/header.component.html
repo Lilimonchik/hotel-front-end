@@ -13,7 +13,7 @@
         </button>
         <span class="name-hotel">Verginia Sharm Hotel</span>
         <span class="spacer"></span>
-        <button mat-raised-button class="registration" routerLink="/registration">Registration</button>
+        <button mat-raised-button class="registration" routerLink="/registration-page">Registration</button>
         <button mat-raised-button routerLink="/sing-in">Sing In</button>
       </mat-toolbar>
     </mat-sidenav-content>
@@ -27,11 +27,15 @@
       <span><a class="routLink" routerLink="">About Us</a></span>
     </div>
     <span class="spacer"></span>
-    <div class="right-content" *ngIf="!isAuthenticated()">
-      <div class="firstType">
-        <span><a routerLink="/registration" class="routLink">Registration</a></span>
-        <span><a routerLink="/sing-in" class="routLink">Sing In</a></span>
-      </div>
+    <div  class="right-content" *ngIf="!isAuthenticated()">
+      <button mat-icon-button class="button-first" (click)="openDialog()">
+        <mat-icon>account_box</mat-icon>
+      </button>
+      <button mat-icon-button class="button-second" routerLink="/registration-page">
+        <mat-icon>
+          account_box
+        </mat-icon>
+      </button>
     </div>
     <div class="right-content" *ngIf="isAuthenticated()">
       <span><a routerLink="/cart" class="routLink">Cabinet</a></span>

@@ -31,6 +31,9 @@ import {MatListModule} from "@angular/material/list";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";
+import {MatDialogModule} from "@angular/material/dialog";
+import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
+import {MatTabsModule} from "@angular/material/tabs";
 
 export function tokenGetter(){
   return localStorage.getItem(ACCESS_TOKEN_KEY);
@@ -49,31 +52,34 @@ export function tokenGetter(){
     InfoAboutUserComponent,
     AddNewRoomComponent,
     CreateOrderComponent,
+    RegistrationPageComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    AngularMaterialModuleModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter,
-        allowedDomains: enviroment.tokenWhiteListedDomains
-      }
-    }),
-    MatInputModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatDatepickerModule,
-    MatProgressSpinnerModule,
-    MatSidenavModule,
-    MatListModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatCardModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        FormsModule,
+        AngularMaterialModuleModule,
+        JwtModule.forRoot({
+            config: {
+                tokenGetter,
+                allowedDomains: enviroment.tokenWhiteListedDomains
+            }
+        }),
+        MatInputModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatDatepickerModule,
+        MatProgressSpinnerModule,
+        MatSidenavModule,
+        MatListModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatCardModule,
+        MatDialogModule,
+        MatTabsModule
+    ],
   providers: [
     {
       provide: AUTH_API_URL,

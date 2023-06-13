@@ -30,6 +30,7 @@
     }
   }
 }
+
 @media (max-width:390px) {
   button{
     font-size: 11px;
@@ -43,7 +44,11 @@
     .routLink{
       color: #fce77e;
       padding-right: 4%;
+      transition: transform 500ms ease-in-out;
   }
+    .routLink:hover{
+      transform: scale(1.1) translate(5px);
+    }
     .left-content{
 
     }
@@ -51,8 +56,21 @@
       flex: 1 1 auto;
     }
     .right-content{
-
+      .button-first{
+        display: flex;
+      }
+      .button-second{
+        display: none;
+      }
+      @media (max-width: 790px) {
+        .button-first{
+          display: none;
+        }
+        .button-second{
+          display: flex;
+        }
     }
+  }
   }
   @media (max-width:650px) {
     .laptop-content{

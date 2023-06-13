@@ -35,8 +35,8 @@ export class AuthService{
       localStorage.removeItem(ACCESS_TOKEN_KEY);
       this.router.navigate(['/']);
   }
-  registration(User: User): Observable<User>{
-      return this.http.post<User>(`${this.apiUrl}RegistrationAction/RegistrationNewUser`,User);
+  registration(User: User){
+      return this.http.post(`${this.apiUrl}RegistrationAction/RegistrationNewUser`,User);
   }
   getDecodedAccessToken(token: string): any {
     try {

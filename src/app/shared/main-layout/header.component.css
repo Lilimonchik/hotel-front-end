@@ -38,9 +38,27 @@
 .content .laptop-content .routLink {
   color: #fce77e;
   padding-right: 4%;
+  transition: transform 500ms ease-in-out;
+}
+.content .laptop-content .routLink:hover {
+  transform: scale(1.1) translate(5px);
 }
 .content .laptop-content .spacer {
   flex: 1 1 auto;
+}
+.content .laptop-content .right-content .button-first {
+  display: flex;
+}
+.content .laptop-content .right-content .button-second {
+  display: none;
+}
+@media (max-width: 790px) {
+  .content .laptop-content .right-content .button-first {
+    display: none;
+  }
+  .content .laptop-content .right-content .button-second {
+    display: flex;
+  }
 }
 @media (max-width: 650px) {
   .content .laptop-content {
