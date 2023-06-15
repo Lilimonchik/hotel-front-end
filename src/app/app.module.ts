@@ -34,6 +34,8 @@ import {MatCardModule} from "@angular/material/card";
 import {MatDialogModule} from "@angular/material/dialog";
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 import {MatTabsModule} from "@angular/material/tabs";
+import { FooterComponent } from './shared/footer/footer/footer.component';
+import {MatMenuModule} from "@angular/material/menu";
 
 export function tokenGetter(){
   return localStorage.getItem(ACCESS_TOKEN_KEY);
@@ -53,6 +55,7 @@ export function tokenGetter(){
     AddNewRoomComponent,
     CreateOrderComponent,
     RegistrationPageComponent,
+    FooterComponent,
   ],
     imports: [
         BrowserModule,
@@ -78,7 +81,8 @@ export function tokenGetter(){
         MatIconModule,
         MatCardModule,
         MatDialogModule,
-        MatTabsModule
+        MatTabsModule,
+        MatMenuModule
     ],
   providers: [
     {

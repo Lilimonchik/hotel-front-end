@@ -4,50 +4,28 @@
   </div>
   <button mat-raised-button routerLink="/newroom" class="addnewroom" *ngIf="isAuthenticated() && User.role==0">Add new room</button>
   <div class="content-maincenter">
-   <div class="content-maincenter-left">
-     <span class="textfilter"> Filter</span>
-     <mat-list class="list">
-       <mat-list-item><button mat-raised-button class="list-iteam" (click)="filterData('Premiume')">Premiume</button></mat-list-item>
-       <mat-list-item><button mat-raised-button class="list-iteam" (click)="filterData('Business')">Business</button></mat-list-item>
-       <mat-list-item><button mat-raised-button class="list-iteam" (click)="filterData('Premiume')">Premiume</button></mat-list-item>
-       <mat-list-item><button mat-raised-button class="list-iteam" (click)="filterData('Premiume')">Premiume</button></mat-list-item>
-       <mat-list-item><button mat-raised-button class="list-iteam" (click)="filterData('Premiume')">Premiume</button></mat-list-item>
-     </mat-list>
-    </div>
+    <button mat-raised-button [matMenuTriggerFor]="menu" color="warn" class="button-filter">Filter</button>
+    <mat-menu #menu="matMenu" class="textfilter">
+      <button mat-menu-item class="list-iteam"  (click)="filterData('Premiume')">Premium</button>
+      <button mat-menu-item class="list-iteam" (click)="filterData('Business')">Business</button>
+      <button mat-menu-item class="list-iteam" (click)="filterData('Premiume')">Economy</button>
+      <button mat-menu-item class="list-iteam" (click)="filterData('Premiume')">2 people</button>
+      <button mat-menu-item class="list-iteam" (click)="filterData('Premiume')">4 people</button>
+    </mat-menu>
     <div class="content-maincenter-right">
      <mat-card class="room" *ngFor="let rooms of RoomFitler">
        <img mat-card-image src="{{rooms.urlPhoto}}" class="photo" alt="room">
-       <mat-card-header>
+       <mat-card-header class="header">
          <mat-card-title class="name">{{rooms.categoryName + " Room"}}</mat-card-title>
        </mat-card-header>
-       <mat-card-content>
+       <mat-card-content class="main-content">
+         <span class="about">Lectus nisi tempus praesent. Varius proin facilisi, fames est netus. Neque ad quisque habitasse inceptos litora ipsum vivamus cum. Rutrum conubia facilisis semper, justo nam quam condimentum penatibus elementum mi fames. At lobortis praesent tristique volutpat egestas per.</span>
        </mat-card-content>
-       <mat-card-actions>
+       <mat-card-actions class="function">
+         <span class="price">{{rooms.price}} USD</span>
+         <button mat-raised-button color="warn">Buy</button>
        </mat-card-actions>
      </mat-card>
     </div>
-    <!--<div class="content-maincenter-right">
-      <mat-card class="card" *ngFor="let room of RoomFitler">
-        <mat-card-header>
-          <h1>sdd</h1>
-        </mat-card-header>
-        <img src="{{room.urlPhoto}}" alt="">
-        <mat-card-content>
-          <h1>Lorem</h1>
-        </mat-card-content>
-        <mat-card-actions>
-          <button>Click</button>
-        </mat-card-actions>
-      </mat-card>0-->
-      <!-- <div class="firstroom"  *ngFor="let rooms of RoomFitler">
-        <img class="room1" src="{{rooms.urlPhoto}}" alt="room1">
-        <span class="nameroom1"><a href="/pages/aboutroom.html">{{rooms.categoryName}} Room</a></span>
-        <span class="undernameroom1">Partial Ocean View Suite With Balcony</span>
-        <div class="priceforgotel">
-          <span class="price">{{rooms.price}}</span>
-          <span class="fortime">USD/ Day</span>
-        </div>
-        <span class="buttombuy"><a class="buy" (click)="addCart(rooms.roomId,1)">Buy</a></span>
-      </div> -->
     </div>
   </div>

@@ -1,39 +1,39 @@
 .content{
   max-width: 2000px;
-  .sidenav{
+  .toolbar {
     display: none;
-    .toolbar{
-      width: 100%;
-      background: #fa6166;
-      color: #fce77e;
-      .menu-button{
-       // display: none;
-      }
-      .name-hotel{
-        //display: none;
-      }
-      .spacer{
-       flex: 1 1 auto;
-      }
-      .registration{
-        margin-right: 1%;
+    background: #fa6166;
+    color: #fce77e;
+    @media (max-width: 650px) {
+      .toolbar{
+        display: block;
       }
     }
-  }
-@media (max-width:650px) {
-  .sidenav {
-    display: block;
+    .button-menu {
+    }
 
-    span {
-      font-size: 14px;
-      padding: 3px;
+    .name-hotel {
+      //display: none;
+    }
+
+    .spacer {
+      flex: 1 1 auto;
+    }
+
+    .registration {
+      margin-right: 1%;
     }
   }
-}
-
-@media (max-width:390px) {
+  }
+@media (max-width:410px) {
   button{
     font-size: 11px;
+  }
+}
+@media (max-width: 390px) {
+  button{
+    font-size: 9px;
+    width: 20px;
   }
 }
   .laptop-content{
@@ -78,8 +78,14 @@
   }
   }
   @media (max-width:650px) {
+    .toolbar {
+    display: flex;
+    span {
+      font-size: 14px;
+      padding: 3px;
+    }
+  }
     .laptop-content{
       display: none;
     }
   }
-}

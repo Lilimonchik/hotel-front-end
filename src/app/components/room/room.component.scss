@@ -1,61 +1,90 @@
-.content{
+.content {
   width: 100%;
-  .undernavigachion{
+
+  .undernavigachion {
     width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 1%;
-    .textunder{
+
+    .textunder {
       font-size: 35px;
       font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     }
   }
-  .addnewroom{
+
+  .addnewroom {
     float: right;
     background: #fa6166;
     color: #fce77e;
     margin-right: 1%;
   }
-  .content-maincenter{
+
+  .content-maincenter {
+    padding: 1%;
     width: 100%;
     display: flex;
-    border: 1px solid black;
-    .content-maincenter-left{
-      width: 20%;
-      border: 1px solid red;
-      padding: 2%;
-      .textfilter{
-        display: flex;
-        width: 100%;
-        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-        font-size: 24px;
-        margin-left: 18%;
-      }
-      .list{
-        width: 100%;
-        .list-iteam{
-          color: #fce77e;
-          background: #fa6166;
-        }
-      }
-    }
-    .content-maincenter-right{
-      width: 80%;
-      max-height: 1500px;
+    flex-direction: column;
+
+    .button-filter {
       display: flex;
-      .room{
+      width: 100px;
+
+    }
+
+    .content-maincenter-right {
+      width: 100%;
+      //max-height: 1500px;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 1%;
+
+      .room {
         display: flex;
         justify-content: center;
         margin-left: 2%;
-        width:30%;
-        .photo{
+        width: 350px;
+
+        .photo {
           width: 100%;
           height: 300px;
         }
-        .name{
+        .header{
+          display: flex;
           width: 100%;
+          justify-content: center;
+          .name {
+            font-size: 25px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+          }
+        }
+
+        .function{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+        }
+        .main-content{
+          .about{
+            font-size: 14px;
+            font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+            letter-spacing: 1px;
+            word-spacing: 1px;
+          }
         }
       }
+    }
   }
+  @media (max-width: 764px) {
+    .content-maincenter{
+      .content-maincenter-right{
+        display: flex;
+        justify-content: center;
+        .room{
+          width: 80%;
+          margin-bottom: 10px;
+        }
+      }
+    }
   }
 }

@@ -1,23 +1,17 @@
 <div class="content">
-  <mat-sidenav-container class="sidenav">
-    <mat-sidenav #sidenav mode="over">
-      <mat-nav-list class="mainlist">
-        <a mat-list-item routerLink="">Home</a>
-        <a mat-list-item routerLink="">Category</a>
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <mat-toolbar class="toolbar">
-        <button mat-icon-button (click)="sidenav.toggle()" class="menu-button">
-          <mat-icon >menu</mat-icon>
-        </button>
-        <span class="name-hotel">Verginia Sharm Hotel</span>
-        <span class="spacer"></span>
-        <button mat-raised-button class="registration" routerLink="/registration-page">Registration</button>
-        <button mat-raised-button routerLink="/sing-in">Sing In</button>
-      </mat-toolbar>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+  <mat-toolbar class="toolbar">
+          <button mat-button [matMenuTriggerFor]="menu" class="button-menu">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/room">Room</button>
+            <button mat-menu-item>Category</button>
+          </mat-menu>
+          <span class="name-hotel">Verginia Sharm Hotel</span>
+          <span class="spacer"></span>
+          <button mat-raised-button class="registration" routerLink="/registration-page">Registration</button>
+          <button mat-raised-button routerLink="/sing-in">Sing In</button>
+  </mat-toolbar>
   <mat-toolbar class="laptop-content">
     <div class="left-content">
       <span><a class="routLink"  routerLink="/">Home</a></span>

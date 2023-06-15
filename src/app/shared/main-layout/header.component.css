@@ -1,74 +1,82 @@
 .content {
   max-width: 2000px;
 }
-.content .sidenav {
+.content .toolbar {
   display: none;
-}
-.content .sidenav .toolbar {
-  width: 100%;
   background: #fa6166;
   color: #fce77e;
 }
-.content .sidenav .toolbar .spacer {
-  flex: 1 1 auto;
-}
-.content .sidenav .toolbar .registration {
-  margin-right: 1%;
-}
 @media (max-width: 650px) {
-  .content .sidenav {
+  .content .toolbar .toolbar {
     display: block;
   }
-  .content .sidenav span {
-    font-size: 14px;
-    padding: 3px;
-  }
 }
-@media (max-width: 390px) {
-  .content button {
+.content .toolbar .spacer {
+  flex: 1 1 auto;
+}
+.content .toolbar .registration {
+  margin-right: 1%;
+}
+
+@media (max-width: 410px) {
+  button {
     font-size: 11px;
   }
 }
-.content .laptop-content {
+@media (max-width: 390px) {
+  button {
+    font-size: 9px;
+    width: 20px;
+  }
+}
+.laptop-content {
   display: flex;
   padding: 2%;
   background: #fa6166;
   color: #fce77e;
 }
-.content .laptop-content .left-content {
+.laptop-content .left-content {
   width: 30%;
   display: flex;
   justify-content: space-between;
 }
-.content .laptop-content .left-content .routLink {
+.laptop-content .left-content .routLink {
   margin-left: 15px;
   display: flex;
   color: #fce77e;
   padding-right: 4%;
   transition: transform 500ms ease;
 }
-.content .laptop-content .left-content .routLink:hover {
+.laptop-content .left-content .routLink:hover {
   transform: scale(1.4);
 }
-.content .laptop-content .spacer {
+.laptop-content .spacer {
   flex: 1 1 auto;
 }
-.content .laptop-content .right-content .button-first {
+.laptop-content .right-content .button-first {
   display: flex;
 }
-.content .laptop-content .right-content .button-second {
+.laptop-content .right-content .button-second {
   display: none;
 }
 @media (max-width: 790px) {
-  .content .laptop-content .right-content .button-first {
+  .laptop-content .right-content .button-first {
     display: none;
   }
-  .content .laptop-content .right-content .button-second {
+  .laptop-content .right-content .button-second {
     display: flex;
   }
 }
+
 @media (max-width: 650px) {
-  .content .laptop-content {
+  .toolbar {
+    display: flex;
+  }
+  .toolbar span {
+    font-size: 14px;
+    padding: 3px;
+  }
+  .laptop-content {
     display: none;
   }
 }
