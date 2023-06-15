@@ -2,7 +2,7 @@
   <div class="left">
     <app-user-cabinet></app-user-cabinet>
   </div>
-  <div class="right" *ngIf="price!=0">
+  <div class="right" *ngIf="price==0">
     <div class="cart" *ngFor="let cartItem of cartItems; let i = index;">
       <div class="cartleft">
         <span class="idCartIteams">Id: {{i+1}}</span>
@@ -23,7 +23,7 @@
       <span class="blocksend"><a routerLink="/createorder">Confirm</a></span>
     </div>
   </div>
-  <div class="right" *ngIf="price==0">
+  <div class="right" *ngIf="price!=0">
     <span class="text">No item in cart!</span>
   </div>
 

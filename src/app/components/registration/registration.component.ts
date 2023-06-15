@@ -13,12 +13,14 @@ export class RegistrationComponent implements OnInit{
 
 
   constructor(private auth: AuthService,
-              private rout: Router) {
+              private rout: Router){
   }
 
   registrationForm: FormGroup;
 
   public isRegistration: boolean = false;
+
+  public isSingIn: boolean = false;
 
   public singInForm: FormGroup;
 
@@ -48,6 +50,14 @@ export class RegistrationComponent implements OnInit{
     });
   }
   singIn(){
-
+    this.isSingIn = true;
+    this.auth.login(this.singInForm.value)
+      .subscribe((res)=>{
+        console.log(res.access_token.sub());
+        this.rout.navigate(['/cart'])
+      },error => {
+        alert("Wrong username or password!")
+        this.isSingIn = false;
+      })
   }
 }

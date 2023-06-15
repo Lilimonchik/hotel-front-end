@@ -23,7 +23,7 @@
        </mat-card-content>
        <mat-card-actions class="function">
          <span class="price">{{rooms.price}} USD</span>
-         <button mat-raised-button color="warn">Buy</button>
+         <button mat-raised-button color="warn" (click)="addCart(rooms.roomId,1)">Buy</button>
        </mat-card-actions>
      </mat-card>
     </div>

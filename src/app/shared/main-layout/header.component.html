@@ -4,13 +4,16 @@
             <mat-icon>menu</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item routerLink="/room">Room</button>
+            <button mat-menu-item routerLink="/">Home</button>
+            <button mat-menu-item routerLink="/rooms">Room</button>
             <button mat-menu-item>Category</button>
           </mat-menu>
           <span class="name-hotel">Verginia Sharm Hotel</span>
           <span class="spacer"></span>
-          <button mat-raised-button class="registration" routerLink="/registration-page">Registration</button>
-          <button mat-raised-button routerLink="/sing-in">Sing In</button>
+          <button mat-raised-button class="registration" routerLink="/registration-page" *ngIf="!isAuthenticated()">Registration</button>
+          <button mat-raised-button routerLink="/sing-in" *ngIf="!isAuthenticated()">Sing In</button>
+          <button mat-raised-button class="registration" routerLink="/registration-page" *ngIf="isAuthenticated()">Cabinet</button>
+          <button mat-raised-button (click)="logOut()" *ngIf="isAuthenticated()">LogOut</button>
   </mat-toolbar>
   <mat-toolbar class="laptop-content">
     <div class="left-content">
@@ -25,15 +28,15 @@
       <button mat-icon-button class="button-first" (click)="openDialog()">
         <mat-icon>account_box</mat-icon>
       </button>
-      <button mat-icon-button class="button-second" routerLink="/registration-page">
+      <button mat-icon-button class="button-second" routerLink="/cart">
         <mat-icon>
           account_box
         </mat-icon>
       </button>
     </div>
     <div class="right-content" *ngIf="isAuthenticated()">
-      <span><a routerLink="/cart" class="routLink">Cabinet</a></span>
-      <span><a routerLink="/" class="routLink" (click)="logOut()">LogOut</a></span>
+      <span><a routerLink="/cart" class="cabinet">Cabinet</a></span>
+      <span><a routerLink="/" class="cabinet" (click)="logOut()">LogOut</a></span>
     </div>
   </mat-toolbar>
 </div>

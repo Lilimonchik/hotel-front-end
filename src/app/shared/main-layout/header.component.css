@@ -5,79 +5,71 @@
   display: none;
   background: #fa6166;
   color: #fce77e;
-}
-@media (max-width: 650px) {
-  .content .toolbar .toolbar {
-    display: block;
-  }
+  padding: 2%;
 }
 .content .toolbar .spacer {
   flex: 1 1 auto;
 }
 .content .toolbar .registration {
   margin-right: 1%;
+  margin-left: 5px;
 }
-
-@media (max-width: 410px) {
-  button {
-    font-size: 11px;
-  }
-}
-@media (max-width: 390px) {
-  button {
-    font-size: 9px;
-    width: 20px;
-  }
-}
-.laptop-content {
+.content .laptop-content {
   display: flex;
   padding: 2%;
   background: #fa6166;
   color: #fce77e;
 }
-.laptop-content .left-content {
+.content .laptop-content .left-content {
   width: 30%;
   display: flex;
   justify-content: space-between;
 }
-.laptop-content .left-content .routLink {
+.content .laptop-content .left-content .routLink {
   margin-left: 15px;
   display: flex;
   color: #fce77e;
   padding-right: 4%;
   transition: transform 500ms ease;
 }
-.laptop-content .left-content .routLink:hover {
-  transform: scale(1.4);
+.content .laptop-content .left-content .routLink:hover {
+  text-decoration: underline;
 }
-.laptop-content .spacer {
+.content .laptop-content .spacer {
   flex: 1 1 auto;
 }
-.laptop-content .right-content .button-first {
+.content .laptop-content .right-content .button-first {
   display: flex;
 }
-.laptop-content .right-content .button-second {
+.content .laptop-content .right-content .button-second {
   display: none;
 }
-@media (max-width: 790px) {
-  .laptop-content .right-content .button-first {
-    display: none;
-  }
-  .laptop-content .right-content .button-second {
-    display: flex;
-  }
+.content .laptop-content .right-content .cabinet {
+  color: #fce77e;
+  margin-left: 7px;
 }
 
 @media (max-width: 650px) {
-  .toolbar {
+  .content .toolbar {
     display: flex;
   }
-  .toolbar span {
-    font-size: 14px;
-    padding: 3px;
-  }
-  .laptop-content {
+  .content .laptop-content {
     display: none;
+  }
+}
+@media (max-width: 457px) {
+  .content .toolbar .name-hotel {
+    font-size: 14px;
+  }
+}
+@media (max-width: 405px) {
+  .content .toolbar button {
+    font-size: 10px !important;
+  }
+}
+@media (max-width: 360px) {
+  .content .toolbar .name-hotel {
+    font-size: 12px;
   }
 }
 

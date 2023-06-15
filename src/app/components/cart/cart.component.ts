@@ -20,9 +20,8 @@ export class CartComponent implements OnInit{
   ngOnInit() {
     this.cart.getCartIteam().subscribe(res =>{
       this.cartItems = res;
-      this.price = 0;
     });
-    this.countTotal()
+    this.countTotal();
   }
 
   countTotal(){

@@ -55,7 +55,7 @@
             formControlName="password"
           >
         </mat-form-field>
-        <button mat-raised-button class="sendregistration" type="submit" color="warn" [disabled]="!registrationForm.valid">Send</button>
+        <button mat-raised-button class="sendregistration" type="submit" color="warn" [disabled]="!registrationForm.valid" mat-dialog-close>Send</button>
       </form>
     </mat-tab>
     <mat-tab label="Sing In">
@@ -80,7 +80,7 @@
             formControlName="password"
           matInput>
         </mat-form-field>
-        <button mat-raised-button color="warn" [disabled]="!singInForm.valid">Send</button>
+        <button mat-raised-button color="warn" [disabled]="!singInForm.valid" type="submit" mat-dialog-close>Send</button>
       </form>
     </mat-tab>
   </mat-tab-group>
