@@ -29,15 +29,15 @@
 }
 .content .content-maincenter .content-maincenter-right {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
   padding: 1%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
 }
 .content .content-maincenter .content-maincenter-right .room {
   display: flex;
   justify-content: center;
   margin-left: 2%;
-  width: 350px;
 }
 .content .content-maincenter .content-maincenter-right .room .photo {
   width: 100%;
@@ -62,16 +62,6 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   letter-spacing: 1px;
   word-spacing: 1px;
-}
-@media (max-width: 764px) {
-  .content .content-maincenter .content-maincenter-right {
-    display: flex;
-    justify-content: center;
-  }
-  .content .content-maincenter .content-maincenter-right .room {
-    width: 80%;
-    margin-bottom: 10px;
-  }
 }
 
 /*# sourceMappingURL=room.component.css.map */
