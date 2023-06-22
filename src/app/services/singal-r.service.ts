@@ -21,7 +21,7 @@ export class SingalRService {
 
   startConnection() {
     this.hubConnection = new signalR.HubConnectionBuilder()
-      .withUrl('https://localhost:7095/signalRTest')
+      .withUrl('https://hetel-api.herokuapp.com/signalRTest')
       .build();
 
     this.hubConnection.start()
