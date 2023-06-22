@@ -3,6 +3,7 @@ import {RoomService} from "../../services/room.service";
 import {Newroom} from "../../interfaces/newroom";
 import {Router} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {SingalRService} from "../../services/singal-r.service";
 
 @Component({
   styleUrls: ['add-new-room.component.css'],
@@ -10,7 +11,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   }
 )
 export class AddNewRoomComponent implements OnInit{
-  constructor(private newroom: RoomService, private rout: Router) {}
+  constructor(private newroom: RoomService, private rout: Router,private signal: SingalRService) {}
 
   addNewRoom: FormGroup;
 
@@ -36,11 +37,11 @@ export class AddNewRoomComponent implements OnInit{
     db.append("count",formValue.count)
     db.append("category",formValue.category)
     db.append("fileUrl",this.urlPhoto)
-      this.newroom.addnewroom(db).subscribe((res) =>{
+      this.newroom.addnewroom(db).subscribe(res =>{
         alert("Successful!");
         this.rout.navigate(["/rooms"])
       }, error => {
-        alert("Bad request!")
+        alert("Bad request!");
         this.isLoading = false;
 
     }

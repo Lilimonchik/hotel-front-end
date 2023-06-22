@@ -1,6 +1,6 @@
 import {Inject, Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {Observable, tap} from 'rxjs';
+import {Observable, Subject, tap} from 'rxjs';
 import {Token} from "../interfaces/Token";
 import {AUTH_API_URL} from "../app.injection-tokens";
 import {JwtHelperService} from "@auth0/angular-jwt";
@@ -8,6 +8,9 @@ import {Router} from "@angular/router";
 import jwt_decode from 'jwt-decode';
 import {User} from "../interfaces/user";
 import {singIn} from "../interfaces/singIn";
+import * as signalIR from '@microsoft/signalr';
+import {Rooms} from "../interfaces/rooms";
+import {RoomService} from "./room.service";
 export const ACCESS_TOKEN_KEY = 'bookstore_access_token';
 @Injectable({
   providedIn:'root'
@@ -18,7 +21,19 @@ export class AuthService{
   constructor(private http: HttpClient,
               @Inject(AUTH_API_URL) private apiUrl: string,
               private jwtHelper: JwtHelperService,
-              private router: Router) {
+              private router: Router,
+              ) {
+  }
+  hubConnection: signalIR.HubConnection;
+
+  public startConnection = () =>{
+    this.hubConnection = new signalIR.HubConnectionBuilder()
+      .withUrl("https://localhost:7095/signalRTest")
+      .build();
+    this.hubConnection.start().then(()=>{
+      console.log("connected")
+    })
+      .catch(err => console.log("Error:" + err));
   }
   login(singIn: singIn): Observable<Token>{
       return this.http.post<Token>(`${this.apiUrl}LogInAction/LogIn`,singIn).pipe(
@@ -45,4 +60,5 @@ export class AuthService{
       return null;
     }
   }
+
 }

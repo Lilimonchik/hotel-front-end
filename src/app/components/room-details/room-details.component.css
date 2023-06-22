@@ -1,0 +1,68 @@
+.content {
+  width: 100%;
+}
+.content .content-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.content .content-header .main-text {
+  padding: 10px;
+  font-size: 40px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.content .main-menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #f5f5f5;
+}
+.content .main-menu .menu-content {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.content .main-menu .menu-content .menu {
+  font-size: 25px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #437bac;
+}
+.content .main-menu .menu-content .menu:hover {
+  text-decoration: underline;
+  color: #42af65;
+}
+.content .main-info {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+}
+.content .main-info .left {
+  width: 50%;
+}
+.content .main-info .left .photo {
+  width: 100%;
+}
+.content .main-info .right {
+  padding: 10px;
+  width: 50%;
+}
+.content .main-info .right .price {
+  display: flex;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding: 10px;
+}
+.content .main-info .right .about {
+  display: flex;
+  font-size: 18px;
+  padding: 10px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+.content .main-info .right .button-buy {
+  display: flex;
+  justify-content: end;
+}
+
+/*# sourceMappingURL=room-details.component.css.map */

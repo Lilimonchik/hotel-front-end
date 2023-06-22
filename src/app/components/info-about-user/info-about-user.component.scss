@@ -23,6 +23,15 @@
       font-size: 20px;
       font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     }
-
+  }
+}
+@media (max-width: 650px) {
+  .content{
+    .content-left{
+      display: none;
+    }
+    .content-right{
+      width: 100%;
+    }
   }
 }

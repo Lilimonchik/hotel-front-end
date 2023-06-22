@@ -27,7 +27,7 @@
     </mat-form-field>
     <input type="file" (change)="uploadFile($event)" required>
     <div class="button">
-      <button mat-raised-button color="warn" class="buttonsubmit" (click)="createnewroom()" [disabled]="!addNewRoom.valid">
+      <button mat-raised-button color="warn" class="buttonsubmit" [disabled]="!addNewRoom.valid">
        <span *ngIf="!isLoading">Submit</span>
         <mat-spinner *ngIf="isLoading" diameter="30"></mat-spinner>
       </button>

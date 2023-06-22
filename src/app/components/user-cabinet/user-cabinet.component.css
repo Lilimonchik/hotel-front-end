@@ -1,32 +1,20 @@
 .main-info-left {
   display: flex;
-  margin: 10%;
+  justify-content: center;
 }
-.main-info-left .ulnavigation {
+.main-info-left .navigation {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 70%;
-  text-align: center;
-  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
-  max-height: 255px;
-  border-radius: 10px;
-  margin: 0 auto;
-  padding: 3%;
+  width: 40%;
 }
-.main-info-left .ulnavigation .navigator {
-  margin: auto;
-  border-radius: 10px;
-  margin-top: 10px;
-  width: 170px;
-  height: 35px;
-  border: 1px solid #000000;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 30px;
-  color: cadetblue;
+.main-info-left .navigation .navigation-item {
+  margin: 5px;
 }
-.main-info-left .ulnavigation .navigator:hover {
-  color: black;
+
+@media (max-width: 650px) {
+  .main-info-left {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=user-cabinet.component.css.map */

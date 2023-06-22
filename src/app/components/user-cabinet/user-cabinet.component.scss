@@ -1,31 +1,17 @@
 .main-info-left {
   display: flex;
-  margin: 10%;
-    .ulnavigation {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 70%;
-      text-align: center;
-      box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
-      max-height: 255px;
-      border-radius: 10px;
-      margin: 0 auto;
-      padding: 3%;
-
-      .navigator {
-        margin: auto;
-        border-radius: 10px;
-        margin-top: 10px;
-        width: 170px;
-        height: 35px;
-        border: 1px solid #000000;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 30px;
-        color: cadetblue;
-      }
-      .navigator:hover{
-        color: black;
-      }
+  justify-content: center;
+  .navigation{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    .navigation-item{
+      margin: 5px;
     }
   }
+}
+@media (max-width: 650px) {
+  .main-info-left{
+    display: none;
+  }
+}

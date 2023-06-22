@@ -1,9 +1,8 @@
 <div class="main-info-left">
-      <ul class="ulnavigation" >
-        <a routerLink="/order"><li class="navigator">Orders</li></a>
-        <a routerLink="/cart"><li class="navigator">Cart</li></a>
-        <a routerLink="/info-about-user"><li class="navigator">Info</li></a>
-        <a><li class="navigator">Payments</li></a>
-        <a (click)="logOut()"><li class="navigator">LogOut</li></a>
-      </ul>
+      <div class="navigation">
+        <button mat-raised-button class="navigation-item" color="warn" routerLink="/order">Order</button>
+        <button mat-raised-button class="navigation-item" color="warn" routerLink="/cart">Cart</button>
+        <button mat-raised-button class="navigation-item" color="warn" routerLink="/info-about-user">Information</button>
+        <button mat-raised-button class="navigation-item" color="warn" (click)="logOut()">Log Out</button>
+      </div>
   </div>
