@@ -14,9 +14,9 @@
     </mat-menu>
     <div class="content-maincenter-right">
      <mat-card class="room" *ngFor="let rooms of RoomFitler">
-       <img mat-card-image src="{{rooms.urlPhoto}}" class="photo" alt="room">
+       <a [routerLink]="['/rooms', rooms.roomId]"><img mat-card-image src="{{rooms.urlPhoto}}" class="photo" alt="room"></a>
        <mat-card-header class="header">
-         <mat-card-title class="name">{{rooms.categoryName + " Room"}}</mat-card-title>
+         <a [routerLink]="['/rooms', rooms.roomId]"><mat-card-title class="name">{{rooms.categoryName + " Room"}}</mat-card-title></a>
        </mat-card-header>
        <mat-card-content class="main-content">
          <span class="about">Lectus nisi tempus praesent. Varius proin facilisi, fames est netus. Neque ad quisque habitasse inceptos litora ipsum vivamus cum. Rutrum conubia facilisis semper, justo nam quam condimentum penatibus elementum mi fames. At lobortis praesent tristique volutpat egestas per.</span>
@@ -24,7 +24,6 @@
        <mat-card-actions class="function">
          <span class="price">{{rooms.price}} USD</span>
          <button mat-raised-button color="warn" (click)="addCart(rooms.roomId,1)">Buy</button>
-         <a [routerLink]="['/rooms', rooms.roomId]">{{ rooms.categoryName }}</a>
        </mat-card-actions>
      </mat-card>
     </div>

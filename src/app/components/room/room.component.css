@@ -49,6 +49,7 @@
   justify-content: center;
 }
 .content .content-maincenter .content-maincenter-right .room .header .name {
+  color: black;
   font-size: 25px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
