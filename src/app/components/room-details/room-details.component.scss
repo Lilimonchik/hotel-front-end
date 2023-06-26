@@ -52,6 +52,13 @@
         font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
         padding: 10px;
       }
+      .сharacteristic{
+        display: flex;
+        padding: 10px;
+        font-size: 18px;
+        line-height: 1.4;
+        font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
+      }
       .about{
         display: flex;
         font-size: 18px;
@@ -61,6 +68,38 @@
       .button-buy{
         display: flex;
         justify-content: end;
+      }
+    }
+  }
+}
+@media (max-width: 754px) {
+  .content{
+    .content-header{
+    }
+    .main-menu{
+
+    }
+    .main-info{
+      display: flex;
+      flex-direction: column;
+      .left{
+        width: 100%;
+      }
+      .right{
+        width: 100%;
+        .price{
+          font-size: 20px;
+        }
+        .about{
+          font-size: 14px;
+          line-height: 1.3;
+        }
+        .button-buy{
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          margin: auto;
+        }
       }
     }
   }

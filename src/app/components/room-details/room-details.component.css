@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .content {
   width: 100%;
 }
@@ -54,6 +55,13 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   padding: 10px;
 }
+.content .main-info .right .сharacteristic {
+  display: flex;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 1.4;
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
+}
 .content .main-info .right .about {
   display: flex;
   font-size: 18px;
@@ -63,6 +71,32 @@
 .content .main-info .right .button-buy {
   display: flex;
   justify-content: end;
+}
+
+@media (max-width: 754px) {
+  .content .main-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .content .main-info .left {
+    width: 100%;
+  }
+  .content .main-info .right {
+    width: 100%;
+  }
+  .content .main-info .right .price {
+    font-size: 20px;
+  }
+  .content .main-info .right .about {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+  .content .main-info .right .button-buy {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+  }
 }
 
 /*# sourceMappingURL=room-details.component.css.map */

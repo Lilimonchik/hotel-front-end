@@ -14,7 +14,8 @@
     </div>
     <div class="right">
       <span class="price">{{room.price}} $</span>
-      <span class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad adipisci assumenda, delectus deserunt dicta eligendi esse explicabo facere fugit laborum libero non, optio quam quia, quidem sint sit voluptatibus.</span>
+      <span class="сharacteristic">Characteristic: People: {{room.countOfPeople}}; Type: {{room.categoryName}}; Rooms: {{room.countOfRoom}}</span>
+      <span class="about">Standard Rooms provide the ideal base during your central London stay. Sleep well on the large handcrafted Vispring mattress and enjoy complimentary high-speed Wi-Fi and beautifully designed bathrooms with award-winning Noble Isle products. Nespresso machine, tea facilities and a hairdryer are also provided.</span>
       <button mat-raised-button color="warn" class="button-buy" (click)="addCart(room.roomId,1)">Buy</button>
     </div>
   </div>

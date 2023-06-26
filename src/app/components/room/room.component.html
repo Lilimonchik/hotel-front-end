@@ -1,10 +1,13 @@
 <div class="content">
+  <div class="error" *ngIf="value <= 8">
+    <span class="error-item" >Error</span>
+  </div>
   <div class="undernavigachion">
     <span class="textunder">Rooms</span>
   </div>
   <button mat-raised-button routerLink="/newroom" class="addnewroom" *ngIf="isAuthenticated() && User.role==0">Add new room</button>
   <div class="content-maincenter">
-    <button mat-raised-button [matMenuTriggerFor]="menu" color="warn" class="button-filter">Filter</button>
+    <button mat-raised-button [matMenuTriggerFor]="menu" color="warn" class="button-filter" (click)="start()" >Filter</button>
     <mat-menu #menu="matMenu" class="textfilter">
       <button mat-menu-item class="list-iteam"  (click)="filterData('Premiume')">Premium</button>
       <button mat-menu-item class="list-iteam" (click)="filterData('Business')">Business</button>

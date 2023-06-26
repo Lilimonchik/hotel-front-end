@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 import {Rooms} from "../interfaces/rooms";
 import {Newroom} from "../interfaces/newroom";
 import {SingalRService} from "./singal-r.service";
+import {AllIformationAboutRoom} from "../interfaces/AllIformationAboutRoom";
 
 @Injectable({
   providedIn: "root",
@@ -24,8 +25,8 @@ export class RoomService{
   addnewroom(newRoom: FormData) {
     return this.http.post(`${this.apiUrl}RoomAction/AddRoom`, newRoom);
   }
-  getProductById(roomId: string): Observable<Rooms> {
+  getProductById(roomId: string): Observable<AllIformationAboutRoom> {
     const params = new HttpParams().set('roomId', roomId);
-    return this.http.get<Rooms>(`${this.apiUrl}RoomAction/ShowRoomForId`,{params: params});
+    return this.http.get<AllIformationAboutRoom>(`${this.apiUrl}RoomAction/ShowRoomForId`,{params: params});
   }
 }

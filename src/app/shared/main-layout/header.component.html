@@ -15,7 +15,7 @@
           <span class="spacer"></span>
           <button mat-raised-button class="registration" routerLink="/registration-page" *ngIf="!isAuthenticated()">Registration</button>
           <button mat-raised-button routerLink="/sing-in" *ngIf="!isAuthenticated()">Sing In</button>
-          <button mat-raised-button class="registration" routerLink="/registration-page" *ngIf="isAuthenticated()">Cabinet</button>
+          <button mat-raised-button class="registration" routerLink="/cart" *ngIf="isAuthenticated()">Cabinet</button>
           <button mat-raised-button (click)="logOut()" *ngIf="isAuthenticated()">LogOut</button>
   </mat-toolbar>
   <mat-toolbar class="laptop-content">

@@ -3,6 +3,7 @@ import {AppRoutingModule} from "../../app-routing.module";
 import {ActivatedRoute} from "@angular/router";
 import {Rooms} from "../../interfaces/rooms";
 import {RoomService} from "../../services/room.service";
+import {AllIformationAboutRoom} from "../../interfaces/AllIformationAboutRoom";
 
 @Component({
   selector: 'app-room-details',
@@ -12,7 +13,7 @@ import {RoomService} from "../../services/room.service";
 export class RoomDetailsComponent {
   roomId: string;
 
-  public room: Rooms;
+  public room: AllIformationAboutRoom;
 
   constructor(private route: ActivatedRoute,
               private rooms: RoomService

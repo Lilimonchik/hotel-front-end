@@ -9,14 +9,14 @@ import {AuthService} from "../../services/auth.service";
 import {SingalRService} from "../../services/singal-r.service";
 import {HubConnection, HubConnectionBuilder} from "@aspnet/signalr";
 import * as signalIR from "@microsoft/signalr";
-import {Subject, Subscription} from "rxjs";
+import {Subject, Subscription, timer} from "rxjs";
 
 @Component({
   templateUrl:'./room.component.html',
   styleUrls:['./room.component.css']
 })
 
-export class RoomComponent implements OnInit, OnDestroy {
+export class RoomComponent implements OnInit{
   constructor(private Rooms: RoomService, private Category: dtoService, private userinfo: RoomsstoreService, private auth: AuthService, private signalRService: SingalRService) {
   }
 
@@ -29,6 +29,11 @@ export class RoomComponent implements OnInit, OnDestroy {
   public RoomFitler: Rooms[] = [];
   public Count = 0;
 
+  public value: number = 10;
+
+  public time: Subscription;
+
+  show: boolean = true;
   ngOnInit() {
     this.Rooms.getRoom().subscribe((res) => {
       this.Room = res;
@@ -45,10 +50,19 @@ export class RoomComponent implements OnInit, OnDestroy {
       console.log(this.RoomFitler);
     });
   }
-  ngOnDestroy() {
 
+  start(){
+    if(this.value<8){
+      this.time.unsubscribe();
+    }
+    this.time = timer(0, 1000).subscribe((d)=>{
+      this.value = d;
+      console.log(d);
+      if(this.value==9){
+        this.time.unsubscribe();
+      }
+    })
   }
-
   filterData(type: string){
     if(type=="Premiume" || type=="Business" || type=="Econome"){
       this.RoomFitler = this.Room.filter(x=>x.categoryName==type);
@@ -77,5 +91,9 @@ export class RoomComponent implements OnInit, OnDestroy {
     this.Rooms.addtocart(RoomId,count).subscribe(res=>{
       alert("Successful!");
     });
+  }
+
+  public onToggle(): void {
+    this.show = !this.show;
   }
 }

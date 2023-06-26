@@ -24,6 +24,8 @@ export class AuthService{
               private router: Router,
               ) {
   }
+
+
   hubConnection: signalIR.HubConnection;
 
   public startConnection = () =>{
@@ -60,5 +62,4 @@ export class AuthService{
       return null;
     }
   }
-
 }
