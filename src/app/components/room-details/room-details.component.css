@@ -2,6 +2,19 @@
 .content {
   width: 100%;
 }
+.content .loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  position: absolute;
+  z-index: 1;
+  background: white;
+}
+.content .loader .item {
+  margin: auto;
+}
 .content .content-header {
   width: 100%;
   display: flex;
@@ -49,11 +62,30 @@
   padding: 10px;
   width: 50%;
 }
-.content .main-info .right .price {
+.content .main-info .right .price-div {
+  width: 200px;
   display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.content .main-info .right .price-div .discount {
+  text-decoration: line-through;
+  display: flex;
+  justify-content: center;
+}
+.content .main-info .right .price-div .price-red {
+  display: flex;
+  justify-content: center;
   font-size: 30px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  padding: 10px;
+  color: red;
+}
+.content .main-info .right .price-div .price-black {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: black;
 }
 .content .main-info .right .сharacteristic {
   display: flex;
@@ -84,7 +116,18 @@
   .content .main-info .right {
     width: 100%;
   }
-  .content .main-info .right .price {
+  .content .main-info .right .price-div {
+    width: 100%;
+  }
+  .content .main-info .right .price-div .discount {
+    justify-content: right;
+  }
+  .content .main-info .right .price-div .price-red {
+    font-size: 20px;
+    justify-content: right;
+  }
+  .content .main-info .right .price-div .price-black {
+    justify-content: right;
     font-size: 20px;
   }
   .content .main-info .right .about {

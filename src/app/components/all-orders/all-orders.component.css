@@ -1,0 +1,44 @@
+.content {
+  width: 100%;
+  padding: 2%;
+}
+.content .content-main .order {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-height: 200px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px 0px #6f6d6d;
+  padding: 5px;
+}
+.content .content-main .order .orderleft {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 100%;
+  align-items: center;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.content .content-main .order .ordermain {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+.content .content-main .order .ordermain .idOrder, .content .content-main .order .ordermain .userId {
+  margin: auto;
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
+  font-size: 18px;
+}
+.content .content-main .order .orderright {
+  display: flex;
+  width: 25%;
+  justify-content: center;
+}
+.content .content-main .order .orderright .totalprice {
+  margin: auto;
+  font-size: 18px;
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
+}
+
+/*# sourceMappingURL=all-orders.component.css.map */

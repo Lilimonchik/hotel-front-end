@@ -7,6 +7,7 @@ import {Order} from "../interfaces/order";
 import {User} from "../interfaces/user";
 import {ACCESS_TOKEN_KEY} from "./auth.service";
 import {CartItem} from "../interfaces/cartItem";
+import {UserDTO} from "../DTO/UserDTO";
 @Injectable({
   providedIn: 'root',
 })
@@ -35,5 +36,12 @@ export class RoomsstoreService{
     return this.http.post(`${this.apiUrl}OrderAction/CreatenewOrder`,{
       promocode
     });
+  }
+
+  getAllOrders(): Observable<Order[]>{
+    return this.http.get<Order[]>(`${this.apiUrl}OrderAction/ShowAllOrder`)
+  }
+  getAllUsers(): Observable<UserDTO[]>{
+    return this.http.get<UserDTO[]>(`${this.apiUrl}RegistrationAction/ShowUser`);
   }
 }

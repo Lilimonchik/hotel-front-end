@@ -2,19 +2,19 @@
   width: 100%;
   display: flex;
   padding: 2%;
-
-  .content-left {
-    width: 30%;
+  flex-direction: column;
+  .content-header {
+    width: 100%;
   }
-
   .content-right {
     display: flex;
-    width: 70%;
+    width: 100%;
     border-radius: 10px;
-    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
-    padding: 1%;
+    box-shadow: 0px 0px 2px 0px #6f6d6d;
+    padding: 15px;
+    margin-top: 20px;
     span{
-      margin-top: 10%;
+      margin-bottom: 25px;
     }
     .leftinfo,.rightinfo{
       display: flex;
@@ -27,11 +27,16 @@
 }
 @media (max-width: 650px) {
   .content{
-    .content-left{
+    .content-header{
       display: none;
     }
     .content-right{
-      width: 100%;
+      .leftinfo{
+        font-size: 16px;
+      }
+      .rightinfo{
+        font-size: 16px;
+      }
     }
   }
 }

@@ -2,25 +2,22 @@
   padding: 2%;
   width: 100%;
   display: flex;
+  flex-direction: column;
 }
-.content .left {
-  width: 30%;
+.content .main-header {
+  width: 100%;
 }
 .content .right {
-  width: 70%;
-  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  width: 100%;
+  box-shadow: 0px 0px 2px 0px #6f6d6d;
   border-radius: 10px;
   max-height: 500px;
+  min-height: 200px;
   overflow: auto;
   padding: 10px;
-}
-.content .right .text {
   display: flex;
-  justify-content: center;
-  width: 100%;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 40px;
-  height: 100%;
+  flex-direction: column;
 }
 .content .right .cart {
   margin-bottom: 2%;
@@ -47,9 +44,7 @@
   height: 100px;
 }
 .content .right .cart .cartcenter .roomId {
-  padding: 8%;
-  width: 100%;
-  text-align: center;
+  margin: auto;
   font-size: 16px;
   font-family: "Courier New", Courier, monospace;
 }

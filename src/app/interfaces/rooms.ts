@@ -5,6 +5,8 @@ export class Rooms{
 
   roomId: string;
 
+  about: string;
+
   countOfPeople: number;
 
   urlPhoto: string;

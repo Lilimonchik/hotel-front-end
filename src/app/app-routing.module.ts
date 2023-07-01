@@ -12,6 +12,8 @@ import {OrdersComponent} from "./components/orders/orders.component";
 import {InfoAboutUserComponent} from "./components/info-about-user/info-about-user.component";
 import {RegistrationPageComponent} from "./components/registration-page/registration-page.component";
 import {RoomDetailsComponent} from "./components/room-details/room-details.component";
+import {AllOrdersComponent} from "./components/all-orders/all-orders.component";
+import {AllUsersComponent} from "./components/all-users/all-users.component";
 
 const routes: Routes =[
   {path:'', component:HomeComponent, title: 'home'},
@@ -26,6 +28,8 @@ const routes: Routes =[
   {path: 'info-about-user',component: InfoAboutUserComponent, title: 'info-about-user'},
   {path: 'registration-page',component: RegistrationPageComponent, title: 'registration-page'},
   { path: 'rooms/:id', component: RoomDetailsComponent },
+  {path: 'all-orders', component: AllOrdersComponent, title: 'all-orders'},
+  {path: 'all-users', component: AllUsersComponent, title: 'All-users'},
 
 
   {path: "**", redirectTo:''}

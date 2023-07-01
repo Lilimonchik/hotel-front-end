@@ -1,5 +1,18 @@
 .content{
   width: 100%;
+  .loader{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    position: absolute;
+    z-index: 1;
+    background: white;
+    .item{
+      margin: auto;
+    }
+  }
   .content-header{
     width: 100%;
     display: flex;
@@ -46,11 +59,30 @@
     .right{
       padding: 10px;
       width: 50%;
-      .price{
+      .price-div{
+        width: 200px;
         display: flex;
-        font-size: 30px;
-        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        flex-direction: column;
         padding: 10px;
+        .discount{
+          text-decoration: line-through;
+          display: flex;
+          justify-content: center;
+        }
+        .price-red{
+          display: flex;
+          justify-content: center;
+          font-size: 30px;
+          font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+          color: red;
+      }
+        .price-black{
+          display: flex;
+          justify-content: center;
+          font-size: 30px;
+          font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+          color: black;
+        }
       }
       .сharacteristic{
         display: flex;
@@ -87,8 +119,19 @@
       }
       .right{
         width: 100%;
-        .price{
-          font-size: 20px;
+        .price-div{
+          width: 100%;
+          .discount{
+            justify-content: right;
+          }
+          .price-red{
+            font-size: 20px;
+            justify-content: right;
+          }
+          .price-black{
+            justify-content: right;
+            font-size: 20px;
+          }
         }
         .about{
           font-size: 14px;

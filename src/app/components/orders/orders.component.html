@@ -1,21 +1,27 @@
 <div class="content">
-  <div class="content-left">
+
+  <div class="content-header">
     <app-user-cabinet></app-user-cabinet>
   </div>
-  <div class="content-right">
-    <div class="order" *ngFor="let iteam of orders; let i = index">
+
+  <div class="content-main">
+    <div class="no-item" *ngIf="orders.length==0">
+      <span class="no-item-text">No item in Orders</span>
+  </div>
+    <div class="order" *ngFor="let item of orders; let i = index">
+
       <div class="orderleft">
         <div class="idOrder">Id:{{i+1}}</div>
-        <div class="orderinfo">{{iteam.orderTime}}</div>
+        <div class="orderinfo">Time: {{item.orderTime}}</div>
       </div>
       <div class="ordermain">
           <span class="idOrder">
-            OrderId: {{iteam.orderId}}
+            OrderId: {{item.orderId}}
           </span>
       </div>
       <div class="orderright">
         <div class="totalprice">
-          <span class="price">Total price: {{iteam.totalPrice}}</span>
+          <span class="price">Total price: {{item.totalPrice}}</span>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ export class Newroom{
   countPeople: number;
   countRoom: number;
   count: number;
+  about: string;
   category: string;
-
   file: File;
 }

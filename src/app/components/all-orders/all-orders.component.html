@@ -1,0 +1,28 @@
+<div class="content">
+  <div class="content-header">
+    <app-user-cabinet></app-user-cabinet>
+  </div>
+  <div class="content-main">
+    <div class="order">
+      <div class="order" *ngFor="let item of orders; let i = index">
+        <div class="orderleft">
+          <div class="idOrder">Id:{{i+1}}</div>
+          <div class="orderinfo">Time: {{item.orderTime}}</div>
+        </div>
+        <div class="ordermain">
+          <span class="idOrder">
+            OrderId: {{item.orderId}}
+          </span>
+          <span class="userId">
+            UserId: {{item.userId}}
+          </span>
+        </div>
+        <div class="orderright">
+          <div class="totalprice">
+            <span class="price">Total price: {{item.totalPrice}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,6 +4,8 @@ import {ActivatedRoute} from "@angular/router";
 import {Rooms} from "../../interfaces/rooms";
 import {RoomService} from "../../services/room.service";
 import {AllIformationAboutRoom} from "../../interfaces/AllIformationAboutRoom";
+import {AuthService} from "../../services/auth.service";
+import {LoadingService} from "../../services/loading.service";
 
 @Component({
   selector: 'app-room-details',
@@ -15,9 +17,17 @@ export class RoomDetailsComponent {
 
   public room: AllIformationAboutRoom;
 
+  loading$ = this.loader.loading$;
+
   constructor(private route: ActivatedRoute,
-              private rooms: RoomService
+              private rooms: RoomService,
+
+              private auth: AuthService,
+
+              private loader: LoadingService,
               ) {}
+
+  public check: boolean = false;
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -30,6 +40,17 @@ export class RoomDetailsComponent {
   addCart(RoomId: string,count: number){
     this.rooms.addtocart(RoomId,count).subscribe(res=>{
       alert("Successful!");
+    }, error => {
+      this.auth.getText("Please, sing in or registration!");
+      this.start();
     });
+  }
+  start(){
+    if(!this.check){
+      this.check = !this.check;
+    }
+    this.auth.start(()=>{
+      this.check = !this.check;
+    })
   }
 }

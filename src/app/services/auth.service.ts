@@ -1,6 +1,6 @@
 import {Inject, Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {Observable, Subject, tap} from 'rxjs';
+import {Observable, Subject, tap, timer} from 'rxjs';
 import {Token} from "../interfaces/Token";
 import {AUTH_API_URL} from "../app.injection-tokens";
 import {JwtHelperService} from "@auth0/angular-jwt";
@@ -28,6 +28,11 @@ export class AuthService{
 
   hubConnection: signalIR.HubConnection;
 
+  public value: number = 10;
+
+  public textShared: string;
+
+  public time: any;
   public startConnection = () =>{
     this.hubConnection = new signalIR.HubConnectionBuilder()
       .withUrl("https://localhost:7095/signalRTest")
@@ -61,5 +66,33 @@ export class AuthService{
     } catch(Error) {
       return null;
     }
+  }
+  public start(callback: () => void): void{
+    if(this.value<8){
+      this.time.unsubscribe();
+    }
+    this.time = timer(0, 1000).subscribe((d)=>{
+      this.value = d;
+      console.log(d);
+      if(this.value==9){
+        this.time.unsubscribe();
+        callback();
+      }
+    })
+  }
+
+  public errorStart(check: boolean){
+    if(!check){
+      check = check;
+    }
+    this.start(()=>{
+      check = !check;
+    })
+  }
+  getText(text: string){
+    this.textShared = text;
+  }
+  sendText(){
+    return this.textShared;
   }
 }

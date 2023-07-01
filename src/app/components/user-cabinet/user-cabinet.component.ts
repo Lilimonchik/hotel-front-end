@@ -27,12 +27,7 @@ export  class UserCabinetComponent implements OnInit{
     this.user.getInfoAboutUser().subscribe(res=>{
       this.users = res;
     })
-    /*this.cartIteam.getCartIteam().subscribe(res=>{
-      this.carts = res;
-      console.log(this.carts);
-    })*/
   }
-
   logOut(){
     return this.auth.logout();
   }

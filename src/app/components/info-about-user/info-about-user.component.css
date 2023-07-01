@@ -2,19 +2,21 @@
   width: 100%;
   display: flex;
   padding: 2%;
+  flex-direction: column;
 }
-.content .content-left {
-  width: 30%;
+.content .content-header {
+  width: 100%;
 }
 .content .content-right {
   display: flex;
-  width: 70%;
+  width: 100%;
   border-radius: 10px;
-  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
-  padding: 1%;
+  box-shadow: 0px 0px 2px 0px #6f6d6d;
+  padding: 15px;
+  margin-top: 20px;
 }
 .content .content-right span {
-  margin-top: 10%;
+  margin-bottom: 25px;
 }
 .content .content-right .leftinfo, .content .content-right .rightinfo {
   display: flex;
@@ -25,11 +27,14 @@
 }
 
 @media (max-width: 650px) {
-  .content .content-left {
+  .content .content-header {
     display: none;
   }
-  .content .content-right {
-    width: 100%;
+  .content .content-right .leftinfo {
+    font-size: 16px;
+  }
+  .content .content-right .rightinfo {
+    font-size: 16px;
   }
 }
 

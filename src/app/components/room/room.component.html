@@ -1,13 +1,12 @@
 <div class="content">
-  <div class="error" *ngIf="value <= 8">
-    <span class="error-item" >Error</span>
-  </div>
+  <div class="loader" *ngIf="loading$ | async"><mat-progress-spinner mode="indeterminate" class="item"></mat-progress-spinner></div>
+  <app-error *ngIf="check"></app-error>
   <div class="undernavigachion">
     <span class="textunder">Rooms</span>
   </div>
   <button mat-raised-button routerLink="/newroom" class="addnewroom" *ngIf="isAuthenticated() && User.role==0">Add new room</button>
   <div class="content-maincenter">
-    <button mat-raised-button [matMenuTriggerFor]="menu" color="warn" class="button-filter" (click)="start()" >Filter</button>
+    <button mat-raised-button [matMenuTriggerFor]="menu" color="warn" class="button-filter">Filter</button>
     <mat-menu #menu="matMenu" class="textfilter">
       <button mat-menu-item class="list-iteam"  (click)="filterData('Premiume')">Premium</button>
       <button mat-menu-item class="list-iteam" (click)="filterData('Business')">Business</button>
@@ -22,10 +21,13 @@
          <a [routerLink]="['/rooms', rooms.roomId]"><mat-card-title class="name">{{rooms.categoryName + " Room"}}</mat-card-title></a>
        </mat-card-header>
        <mat-card-content class="main-content">
-         <span class="about">Lectus nisi tempus praesent. Varius proin facilisi, fames est netus. Neque ad quisque habitasse inceptos litora ipsum vivamus cum. Rutrum conubia facilisis semper, justo nam quam condimentum penatibus elementum mi fames. At lobortis praesent tristique volutpat egestas per.</span>
+         <span class="about">{{rooms.about}}</span>
        </mat-card-content>
        <mat-card-actions class="function">
-         <span class="price">{{rooms.price}} USD</span>
+         <div class="price-div">
+           <span class="discount" *ngIf="rooms.discount!=0">{{rooms.price}} USD</span>
+           <span [ngClass]="{'price-red': rooms.discount!=0, 'price-black': rooms.discount==0}">{{rooms.price - rooms.discount}} USD</span>
+         </div>
          <button mat-raised-button color="warn" (click)="addCart(rooms.roomId,1)">Buy</button>
        </mat-card-actions>
      </mat-card>

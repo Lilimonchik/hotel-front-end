@@ -2,6 +2,8 @@ import {Component, OnInit} from "@angular/core";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
+import {RoomsstoreService} from "../../services/roomsstore.service";
+import {User} from "../../interfaces/user";
 
 @Component({
   selector: 'app-registration',
@@ -13,7 +15,9 @@ export class RegistrationComponent implements OnInit{
 
 
   constructor(private auth: AuthService,
-              private rout: Router){
+              private rout: Router,
+
+              private user: RoomsstoreService){
   }
 
   registrationForm: FormGroup;
@@ -23,6 +27,10 @@ export class RegistrationComponent implements OnInit{
   public isSingIn: boolean = false;
 
   public singInForm: FormGroup;
+
+  public  check: boolean = false;
+
+  public userInfo: User;
 
   ngOnInit() {
     this.registrationForm = new FormGroup({
@@ -38,6 +46,14 @@ export class RegistrationComponent implements OnInit{
       password: new FormControl('',[Validators.required])
     })
   }
+  start(){
+    if(!this.check){
+      this.check = !this.check;
+    }
+    this.auth.start(()=>{
+      this.check = !this.check;
+    })
+  }
 
   registration(){
     this.isRegistration = true;
@@ -45,7 +61,8 @@ export class RegistrationComponent implements OnInit{
       console.log("Successful!")
       this.rout.navigate(["/sing-in"]);
     }, error => {
-      console.log(error);
+      this.auth.getText("User with this username has already registered!");
+      this.start();
       this.isRegistration = false;
     });
   }
@@ -53,11 +70,21 @@ export class RegistrationComponent implements OnInit{
     this.isSingIn = true;
     this.auth.login(this.singInForm.value)
       .subscribe((res)=>{
-        console.log(res.access_token.sub());
-        this.rout.navigate(['/cart'])
+        this.user.getInfoAboutUser().subscribe(res=>{
+          this.userInfo = res;
+          this.checkUser();
+        })
       },error => {
-        alert("Wrong username or password!")
+        this.auth.getText("Wrong username or password!");
         this.isSingIn = false;
       })
+  }
+  checkUser(){
+    if(this.userInfo.role==1){
+      this.rout.navigate(['/all-orders']);
+    }
+    else if(this.userInfo.role==0){
+      this.rout.navigate(['/cart'])
+    }
   }
 }

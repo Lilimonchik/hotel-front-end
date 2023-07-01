@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {RoomsstoreService} from "../../services/roomsstore.service";
 import {CartItem} from "../../interfaces/cartItem";
 import {CountService} from "../../services/count.service";
+import {LoadingService} from "../../services/loading.service";
 
 @Component({
   selector: 'app-cart',
@@ -10,7 +11,9 @@ import {CountService} from "../../services/count.service";
 })
 
 export class CartComponent implements OnInit{
-  constructor(private cart: RoomsstoreService) {
+
+  loading$ = this.loading.loading$;
+  constructor(private cart: RoomsstoreService, private loading: LoadingService) {
   }
 
   public cartItems: CartItem[]=[];
@@ -20,15 +23,17 @@ export class CartComponent implements OnInit{
   ngOnInit() {
     this.cart.getCartIteam().subscribe(res =>{
       this.cartItems = res;
+      this.countTotal();
     });
-    this.countTotal();
+
   }
 
   countTotal(){
       let totalPrice = 0;
       for(let item of this.cartItems){
-        totalPrice+=item.count*item.price;
+        totalPrice= totalPrice+ (item.count*item.price);
       }
       this.price = totalPrice;
+      //console.log(this.price);
   }
 }

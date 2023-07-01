@@ -18,6 +18,8 @@ export class RegistrationPageComponent implements OnInit{
 
   public isRegistration: boolean = false;
 
+  public check: boolean = false;
+
   ngOnInit() {
     this.registrationForm = new FormGroup({
       firstName: new FormControl('',[Validators.required]),
@@ -29,13 +31,23 @@ export class RegistrationPageComponent implements OnInit{
     })
   }
 
+  start(){
+    if(!this.check){
+      this.check = !this.check;
+    }
+    this.auth.start(()=>{
+      this.check = !this.check;
+    })
+  }
+
   registration(){
     this.isRegistration = true;
     this.auth.registration(this.registrationForm.value).subscribe(res=>{
       console.log("Successful!")
       this.rout.navigate(["/sing-in"]);
     }, error => {
-      console.log(error);
+      this.auth.getText("User with this username has already registered!");
+      this.start();
       this.isRegistration = false;
     });
   }

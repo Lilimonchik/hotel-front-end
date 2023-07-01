@@ -1,8 +1,15 @@
-<div class="main-info-left">
-      <div class="navigation">
-        <button mat-raised-button class="navigation-item" color="warn" routerLink="/order">Order</button>
-        <button mat-raised-button class="navigation-item" color="warn" routerLink="/cart">Cart</button>
-        <button mat-raised-button class="navigation-item" color="warn" routerLink="/info-about-user">Information</button>
-        <button mat-raised-button class="navigation-item" color="warn" (click)="logOut()">Log Out</button>
+<div class="main-info-header">
+      <div class="navigation" *ngIf="users.role==0">
+        <div class="navigation-item" color="warn" routerLink="/order">Order</div>
+        <div class="navigation-item" color="warn" routerLink="/cart">Cart</div>
+        <div class="navigation-item" color="warn" routerLink="/info-about-user">Information</div>
+        <div class="navigation-item" color="warn" (click)="logOut()">Log Out</div>
+      </div>
+      <div class="navigation" *ngIf="users.role==1">
+        <div class="navigation-item" color="warn" routerLink="/all-orders">All Orders</div>
+        <div class="navigation-item" color="warn" routerLink="/cart">Users</div>
+        <div class="navigation-item" color="warn" routerLink="/info-about-user">Add Promo-code</div>
+        <div class="navigation-item" color="warn" routerLink="/info-about-user">Add Discount</div>
+        <div class="navigation-item" color="warn" (click)="logOut()">Log Out</div>
       </div>
   </div>

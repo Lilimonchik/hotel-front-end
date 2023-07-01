@@ -10,6 +10,8 @@ import {SingalRService} from "../../services/singal-r.service";
 import {HubConnection, HubConnectionBuilder} from "@aspnet/signalr";
 import * as signalIR from "@microsoft/signalr";
 import {Subject, Subscription, timer} from "rxjs";
+import {ErrorComponent} from "../error/error.component";
+import {LoadingService} from "../../services/loading.service";
 
 @Component({
   templateUrl:'./room.component.html',
@@ -17,7 +19,8 @@ import {Subject, Subscription, timer} from "rxjs";
 })
 
 export class RoomComponent implements OnInit{
-  constructor(private Rooms: RoomService, private Category: dtoService, private userinfo: RoomsstoreService, private auth: AuthService, private signalRService: SingalRService) {
+  loading$ = this.loader.loading$;
+  constructor(private Rooms: RoomService, private Category: dtoService, private userinfo: RoomsstoreService, private auth: AuthService, private signalRService: SingalRService, private loader: LoadingService) {
   }
 
 
@@ -29,9 +32,7 @@ export class RoomComponent implements OnInit{
   public RoomFitler: Rooms[] = [];
   public Count = 0;
 
-  public value: number = 10;
-
-  public time: Subscription;
+  public check: boolean = false;
 
   show: boolean = true;
   ngOnInit() {
@@ -52,15 +53,11 @@ export class RoomComponent implements OnInit{
   }
 
   start(){
-    if(this.value<8){
-      this.time.unsubscribe();
+    if(!this.check){
+      this.check = !this.check;
     }
-    this.time = timer(0, 1000).subscribe((d)=>{
-      this.value = d;
-      console.log(d);
-      if(this.value==9){
-        this.time.unsubscribe();
-      }
+    this.auth.start(()=>{
+      this.check = !this.check;
     })
   }
   filterData(type: string){
@@ -90,9 +87,11 @@ export class RoomComponent implements OnInit{
   addCart(RoomId: string,count: number){
     this.Rooms.addtocart(RoomId,count).subscribe(res=>{
       alert("Successful!");
+      },error => {
+      this.auth.getText("Please, sing in or registration!");
+      this.start();
     });
   }
-
   public onToggle(): void {
     this.show = !this.show;
   }

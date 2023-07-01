@@ -1,4 +1,6 @@
 <div class="content">
+  <div class="loader" *ngIf="loading$ | async"><mat-progress-spinner mode="indeterminate" class="item"></mat-progress-spinner></div>
+  <app-error *ngIf="check"></app-error>
   <div class="content-header">
     <span class="main-text">{{room.categoryName}} Room</span>
   </div>
@@ -13,9 +15,13 @@
       <img src="{{room.urlPhoto}}" alt="photo" class="photo">
     </div>
     <div class="right">
-      <span class="price">{{room.price}} $</span>
+      <div class="price-div">
+        <span class="discount" *ngIf="room.discount!=0">{{room.price}} USD</span>
+        <span [ngClass]="{'price-black': room.discount==0, 'price-red': room.discount!=0}">{{room.price - room.discount}} USD</span>
+      </div>
+
       <span class="сharacteristic">Characteristic: People: {{room.countOfPeople}}; Type: {{room.categoryName}}; Rooms: {{room.countOfRoom}}</span>
-      <span class="about">Standard Rooms provide the ideal base during your central London stay. Sleep well on the large handcrafted Vispring mattress and enjoy complimentary high-speed Wi-Fi and beautifully designed bathrooms with award-winning Noble Isle products. Nespresso machine, tea facilities and a hairdryer are also provided.</span>
+      <span class="about">{{room.about}}</span>
       <button mat-raised-button color="warn" class="button-buy" (click)="addCart(room.roomId,1)">Buy</button>
     </div>
   </div>

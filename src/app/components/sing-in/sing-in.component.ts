@@ -4,6 +4,8 @@ import {AuthService} from "../../services/auth.service";
 import {Subscription} from "rxjs";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {enviroment} from "../../../environments/enviroment";
+import {RoomsstoreService} from "../../services/roomsstore.service";
+import {User} from "../../interfaces/user";
 @Component({
   selector: 'app-sing-in',
   templateUrl:'./sing-in.component.html',
@@ -12,9 +14,13 @@ import {enviroment} from "../../../environments/enviroment";
 
 export class SingInComponent implements OnInit{
   constructor(private auth: AuthService,
-              private router: Router) {
+              private router: Router,
+              private user: RoomsstoreService
+              ) {
   }
   singInForm: FormGroup;
+
+  public  userInfo: User;
   public isSingIn: boolean = false;
   ngOnInit() {
     this.singInForm = new FormGroup({
@@ -28,11 +34,22 @@ export class SingInComponent implements OnInit{
     this.auth.login(this.singInForm.value)
       .subscribe((res)=>{
         console.log(res.access_token.sub());
-        this.router.navigate(['/cart'])
+        this.user.getInfoAboutUser().subscribe( res => {
+          this.userInfo = res;
+          this.check();
+        });
       },error => {
         alert("Wrong username or password!")
         this.isSingIn = false;
       })
+  }
+  check(){
+    if(this.userInfo.role==1){
+      this.router.navigate(['/all-orders']);
+    }
+    else if(this.userInfo.role==0){
+      this.router.navigate(['/cart']);
+    }
   }
   logout(){
     this.auth.logout();

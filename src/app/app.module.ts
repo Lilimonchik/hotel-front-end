@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import {HomeComponent} from "./components/home/home.component";
 import {RegistrationComponent} from "./components/registration/registration.component";
 import {RoomComponent} from "./components/room/room.component";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserCabinetComponent} from "./components/user-cabinet/user-cabinet.component";
 import { HeaderComponent } from './shared/main-layout/header.component';
@@ -37,6 +37,11 @@ import {MatTabsModule} from "@angular/material/tabs";
 import { FooterComponent } from './shared/footer/footer/footer.component';
 import {MatMenuModule} from "@angular/material/menu";
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
+import { ErrorComponent } from './components/error/error.component';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {NetworkInterceptor} from "./services/network.interceptor";
+import { AllOrdersComponent } from './components/all-orders/all-orders.component';
+import { AllUsersComponent } from './components/all-users/all-users.component';
 
 export function tokenGetter(){
   return localStorage.getItem(ACCESS_TOKEN_KEY);
@@ -58,39 +63,48 @@ export function tokenGetter(){
     RegistrationPageComponent,
     FooterComponent,
     RoomDetailsComponent,
+    ErrorComponent,
+    AllOrdersComponent,
+    AllUsersComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-        FormsModule,
-        AngularMaterialModuleModule,
-        JwtModule.forRoot({
-            config: {
-                tokenGetter,
-                allowedDomains: enviroment.tokenWhiteListedDomains
-            }
-        }),
-        MatInputModule,
-        BrowserAnimationsModule,
-        MatButtonModule,
-        MatDatepickerModule,
-        MatProgressSpinnerModule,
-        MatSidenavModule,
-        MatListModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatCardModule,
-        MatDialogModule,
-        MatTabsModule,
-        MatMenuModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AngularMaterialModuleModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter,
+        allowedDomains: enviroment.tokenWhiteListedDomains
+      }
+    }),
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatProgressSpinnerModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
+    MatDialogModule,
+    MatTabsModule,
+    MatMenuModule,
+    MatProgressBarModule
+  ],
   providers: [
     {
       provide: AUTH_API_URL,
-      useValue:enviroment.authApi
-    }
+      useValue:enviroment.authApi,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: NetworkInterceptor,
+      multi: true,
+    },
   ],
   bootstrap:[AppComponent],
 })

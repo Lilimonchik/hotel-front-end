@@ -1,0 +1,29 @@
+<div class="content">
+  <div class="content-header">
+    <app-user-cabinet></app-user-cabinet>
+  </div>
+  <div class="content-main">
+    <div class="user" *ngFor="let user of userInfo; let i = index">
+      <div class="left-info">
+        <span class="id">ID: {{i}}</span>
+        <span class="userId">User ID: {{user.userId}}</span>
+      </div>
+      <div class="main-info">
+        <span class="first-name">First Name: {{user.firstName}}</span>
+        <span class="second-name">Second Name: {{user.name}}</span>
+      </div>
+      <div class="right-info">
+        <span class="email">Email: {{user.email}}</span>
+        <span class="user-name">UserName: {{user.userName}}</span>
+      </div>
+      <div class="role-div">
+        <span class="role" *ngIf="user.role==1">
+          Admin
+        </span>
+        <span class="role" *ngIf="user.role==0">
+          User
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

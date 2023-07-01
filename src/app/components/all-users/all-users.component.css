@@ -1,0 +1,65 @@
+.content {
+  width: 100%;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+}
+.content .content-main {
+  margin-top: 20px;
+  width: 100%;
+  box-shadow: 0px 0px 2px 0px #6f6d6d;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.content .content-main .user {
+  display: flex;
+  box-shadow: 0px 0px 2px 0px #6f6d6d;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 18px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.content .content-main .user .left-info {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+.content .content-main .user .left-info .id {
+  margin: auto;
+}
+.content .content-main .user .left-info .userId {
+  margin: auto;
+}
+.content .content-main .user .main-info {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+.content .content-main .user .main-info .first-name {
+  margin: auto;
+}
+.content .content-main .user .main-info .second-name {
+  margin: auto;
+}
+.content .content-main .user .right-info {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+.content .content-main .user .right-info .email {
+  margin: auto;
+}
+.content .content-main .user .right-info .user-name {
+  margin: auto;
+}
+.content .content-main .user .role-div {
+  display: flex;
+  justify-content: center;
+  width: 10%;
+}
+.content .content-main .user .role-div .role {
+  margin: auto;
+}
+
+/*# sourceMappingURL=all-users.component.css.map */
