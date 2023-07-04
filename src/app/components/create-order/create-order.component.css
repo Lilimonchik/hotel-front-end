@@ -1,86 +1,22 @@
 .content {
+  padding: 2%;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  padding-bottom: 1%;
-}
-.content .content-main {
-  margin-top: 5%;
-  width: 40%;
-  height: 40%;
-  border: 1px solid #000;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-}
-.content .content-main .order {
   display: flex;
   flex-direction: column;
 }
-.content .content-main .order .ordertext {
+.content .right {
+  margin-top: 20px;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  font-size: 35px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
-.content .content-main .order .step {
-  font-size: 25px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  margin-left: 5%;
-}
-.content .content-main .order .firststep {
+  box-shadow: 0px 0px 2px 0px #6f6d6d;
+  border-radius: 10px;
+  max-height: 500px;
+  min-height: 200px;
+  overflow: auto;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  border-radius: 10px;
 }
-.content .content-main .order .firststep input {
-  margin-bottom: 2%;
-  margin-top: 1%;
-  margin-left: 30%;
-  width: 40%;
-  height: 30px;
-  border-radius: 4px;
-}
-.content .content-main .order .secondstep {
-  margin-top: 1%;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-}
-.content .content-main .order .secondstep .payments {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  font-size: 24px;
-  margin-top: 2%;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
-.content .content-main .order .secondstep .textradio {
-  font-size: 24px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  padding: 0.5%;
-}
-.content .content-main .order .thirdstep {
-  border-radius: 10px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  margin-bottom: 1%;
-}
-.content .content-main .order .thirdstep .showcart {
-  width: 100%;
-  height: 400px;
-  overflow: scroll;
-}
-.content .content-main .order .thirdstep .showcart .price {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
-  font-size: 16px;
-}
-.content .content-main .order .thirdstep .showcart .cart {
+.content .right .cart {
   margin-bottom: 2%;
   display: flex;
   width: 100%;
@@ -88,30 +24,28 @@
   border: 1px solid #000000;
   border-radius: 10px;
 }
-.content .content-main .order .thirdstep .showcart .cart .cartleft {
+.content .right .cart .cartleft {
   width: 25%;
   height: 100px;
 }
-.content .content-main .order .thirdstep .showcart .cart .cartleft .idCartIteams {
+.content .right .cart .cartleft .idCartIteams {
   display: inline-block;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   font-size: 16px;
   margin-top: 40px;
   margin-left: 10px;
 }
-.content .content-main .order .thirdstep .showcart .cart .cartcenter {
+.content .right .cart .cartcenter {
   display: flex;
   width: 50%;
   height: 100px;
 }
-.content .content-main .order .thirdstep .showcart .cart .cartcenter .roomId {
-  padding: 8%;
-  width: 100%;
-  text-align: center;
+.content .right .cart .cartcenter .roomId {
+  margin: auto;
   font-size: 16px;
   font-family: "Courier New", Courier, monospace;
 }
-.content .content-main .order .thirdstep .showcart .cart .cartright {
+.content .right .cart .cartright {
   display: flex;
   flex-direction: column;
   padding: 2%;
@@ -121,20 +55,37 @@
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
   font-size: 16px;
 }
-.content .content-main .order .thirdstep .showcart .cart .cartright .priceroom {
+.content .right .cart .cartright .priceroom {
   margin-top: 10%;
 }
-.content .content-main .order .sendorder {
+.content .right .totalprice {
+  display: flex;
+  justify-content: left;
+}
+.content .right .totalprice .total {
+  display: flex;
+  justify-content: left;
+  padding-bottom: 1%;
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
+  font-size: 16px;
+}
+.content .right .send {
+  width: 70%;
+  margin: auto;
   display: flex;
   justify-content: center;
+}
+.content .right .send .send-order {
   width: 20%;
-  margin: auto;
-  background: #fa6166;
-  font-size: 20px;
-  text-align: center;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  border-radius: 10px;
+}
+
+@media (max-width: 650px) {
+  .content .left {
+    display: none;
+  }
+  .content .right {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=create-order.component.css.map */

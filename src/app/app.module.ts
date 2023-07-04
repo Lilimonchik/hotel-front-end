@@ -42,6 +42,8 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {NetworkInterceptor} from "./services/network.interceptor";
 import { AllOrdersComponent } from './components/all-orders/all-orders.component';
 import { AllUsersComponent } from './components/all-users/all-users.component';
+import { AddPromoCodeComponent } from './components/add-promo-code/add-promo-code.component';
+import { AddDiscountComponent } from './components/add-discount/add-discount.component';
 
 export function tokenGetter(){
   return localStorage.getItem(ACCESS_TOKEN_KEY);
@@ -66,6 +68,8 @@ export function tokenGetter(){
     ErrorComponent,
     AllOrdersComponent,
     AllUsersComponent,
+    AddPromoCodeComponent,
+    AddDiscountComponent,
   ],
   imports: [
     BrowserModule,

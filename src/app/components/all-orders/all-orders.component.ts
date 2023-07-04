@@ -17,7 +17,7 @@ export class AllOrdersComponent {
   public price: number = 0;
 
   ngOnInit(){
-    this.order.getOrders().subscribe(res=>{
+    this.order.getAllOrders().subscribe(res=>{
       this.orders = res
     })
   }

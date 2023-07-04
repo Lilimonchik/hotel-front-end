@@ -86,7 +86,8 @@ export class RoomComponent implements OnInit{
   }
   addCart(RoomId: string,count: number){
     this.Rooms.addtocart(RoomId,count).subscribe(res=>{
-      alert("Successful!");
+      this.auth.getText("Successful!");
+      this.start();
       },error => {
       this.auth.getText("Please, sing in or registration!");
       this.start();

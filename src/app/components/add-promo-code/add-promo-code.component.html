@@ -1,0 +1,39 @@
+<div class="content">
+  <div class="content-header">
+    <app-user-cabinet></app-user-cabinet>
+  </div>
+  <div class="content-main">
+    <div class="content-left">
+      <div class="promocode" *ngFor="let promo of promocodes">
+        <span class="name-promocode">Name: {{promo.promocodeName}}</span>
+        <span class="suma">Suma: {{promo.sum}}</span>
+      </div>
+    </div>
+    <div class="content-right">
+      <form
+        (ngSubmit)="submit()"
+        [formGroup]="promocode"
+        class="form-promocode"
+      >
+        <span class="add-promo-code">Add Promo-code</span>
+        <div class="promocode-name">
+          <label class="name">Name:</label>
+          <input
+            type="text"
+            class="input-name"
+            formControlName="namePromocode"
+          >
+        </div>
+        <div class="promocode-suma">
+          <label class="suma">Suma:</label>
+          <input
+            type="text"
+            class="input-sum"
+            formControlName="sum"
+          >
+        </div>
+        <button mat-raised-button color="warn" class="send">Send</button>
+      </form>
+    </div>
+  </div>
+</div>

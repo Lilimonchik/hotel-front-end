@@ -42,10 +42,11 @@ export class AddNewRoomComponent implements OnInit{
     db.append("category",formValue.category)
     db.append("fileUrl",this.urlPhoto)
       this.newroom.addnewroom(db).subscribe(res =>{
-
+        console.log("Successful!")
         this.rout.navigate(["/rooms"])
       }, error => {
         this.auth.getText("Op's! Something was wrong!");
+        console.log("Bad!");
         this.start();
         this.isLoading = false;
 

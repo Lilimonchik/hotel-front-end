@@ -1,14 +1,14 @@
 <div class="main-info-header">
-      <div class="navigation" *ngIf="users.role==0">
+      <div class="navigation" *ngIf="checkUser(users)">
         <div class="navigation-item" color="warn" routerLink="/order">Order</div>
         <div class="navigation-item" color="warn" routerLink="/cart">Cart</div>
         <div class="navigation-item" color="warn" routerLink="/info-about-user">Information</div>
         <div class="navigation-item" color="warn" (click)="logOut()">Log Out</div>
       </div>
-      <div class="navigation" *ngIf="users.role==1">
+      <div class="navigation" *ngIf="!checkUser(users)">
         <div class="navigation-item" color="warn" routerLink="/all-orders">All Orders</div>
-        <div class="navigation-item" color="warn" routerLink="/cart">Users</div>
-        <div class="navigation-item" color="warn" routerLink="/info-about-user">Add Promo-code</div>
+        <div class="navigation-item" color="warn" routerLink="/all-users">Users</div>
+        <div class="navigation-item" color="warn" routerLink="/add-promo-code">Add Promo-code</div>
         <div class="navigation-item" color="warn" routerLink="/info-about-user">Add Discount</div>
         <div class="navigation-item" color="warn" (click)="logOut()">Log Out</div>
       </div>

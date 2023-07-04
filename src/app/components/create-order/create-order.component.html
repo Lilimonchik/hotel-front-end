@@ -1,42 +1,23 @@
 <div class="content">
-  <div class="content-main">
-    <form class="order">
-      <span class="ordertext">Order</span>
-      <div class="firststep">
-        <span class="step">1 Step</span>
-        <input placeholder="Firstname" class="firstname" type="text" #FirstName>
-        <input placeholder="Secondname" class="secondname" type="text" #SecondName>
-        <input placeholder="Number" class="number" type="tel" #Number>
-        <input placeholder="Email" class="email" type="email" #Email>
+  <app-error *ngIf="check"></app-error>
+    <div class="right">
+      <div class="cart" *ngFor="let cartItem of cartiteams; let i = index;">
+        <div class="cartleft">
+          <span class="idCartIteams">Id: {{i+1}}</span>
+        </div>
+        <div class="cartcenter">
+          <span class="roomId">RoomId: {{cartItem.roomId}}</span>
+        </div>
+        <div class="cartright">
+          <span class="countroom">Count: {{cartItem.count}}</span>
+          <span class="priceroom">Price: {{cartItem.price}}</span>
+        </div>
       </div>
-      <div class="secondstep">
-        <span class="step">2 Step</span>
-        <span class="payments">What type of payments would you choose:</span>
-        <span class="textradio"><input type="radio" class="radio"> Cash</span>
-        <span class="textradio"><input type="radio" class="radio"> Сard upon receipt</span>
-        <span class="textradio"><input type="radio" class="radio"> Card</span>
+      <div class="totalprice">
+        <span class="total">Total price: {{price}}</span>
       </div>
-      <div class="thirdstep">
-          <span class="step">3 Step</span>
-          <div class="showcart">
-            <div class="cart" *ngFor="let cartIteam of cartiteams; let i = index;">
-              {{countTotal(cartIteam.price)}}
-              <div class="cartleft">
-                <span class="idCartIteams">Id: {{i+1}}</span>
-              </div>
-              <div class="cartcenter">
-                <span class="roomId">RoomId: {{cartIteam.roomId}}</span>
-              </div>
-              <div class="cartright">
-                <span class="countroom">Count: {{cartIteam.count}}</span>
-                <span class="priceroom">Price: {{cartIteam.price}}</span>
-              </div>
-
-            </div>
-            <span class="price">Total price: {{price}}</span>
-          </div>
+      <div class="send">
+        <button mat-raised-button class="send-order" color="warn" (click)="neworder('')">Send</button>
       </div>
-      <span class="sendorder"><a routerLink="/" (click)="neworder(promocode)">Submit</a></span>
-    </form>
-  </div>
+    </div>
 </div>

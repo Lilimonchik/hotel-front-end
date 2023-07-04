@@ -11,6 +11,8 @@ import {singIn} from "../interfaces/singIn";
 import * as signalIR from '@microsoft/signalr';
 import {Rooms} from "../interfaces/rooms";
 import {RoomService} from "./room.service";
+import {Role} from "../DTO/UserDTO";
+import {Promocode} from "../interfaces/promocode";
 export const ACCESS_TOKEN_KEY = 'bookstore_access_token';
 @Injectable({
   providedIn:'root'
@@ -94,5 +96,25 @@ export class AuthService{
   }
   sendText(){
     return this.textShared;
+  }
+
+  public checkUser(user: User): boolean{
+    if(user.role==Role.user){
+      return true;
+    }
+    else if (user.role==Role.admin){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+
+  public showPromocode(): Observable<Promocode[]>{
+    return this.http.get<Promocode[]>(`${this.apiUrl}PromocodeAction/ShowPromocode`);
+  }
+
+  public addPromocode(promocode: Promocode){
+    return this.http.post(`${this.apiUrl}PromocodeAction/AddPromocode`,promocode);
   }
 }

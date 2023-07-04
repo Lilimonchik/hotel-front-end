@@ -1,0 +1,71 @@
+.content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  .content-header{
+    width: 100%;
+  }
+  .content-main{
+    display: flex;
+    width: 100%;
+    .content-left{
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0px 0px 2px 0px #6f6d6d;
+      padding: 20px;
+      margin: 20px;
+      .promocode{
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        font-size: 25px;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        box-shadow: 0px 0px 2px 0px #6f6d6d;
+        margin-bottom: 20px;
+        padding: 10px;
+      }
+    }
+    .content-right{
+      width: 30%;
+
+      .form-promocode{
+        margin-top: 20px;
+        box-shadow: 0px 0px 2px 0px #6f6d6d;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        font-size: 20px;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        input{
+          margin-top: 10px;
+          margin-bottom: 10px;
+          box-shadow: 0px 0px 2px 0px #6f6d6d;
+          width: 50%;
+          height: 25px;
+          font-size: 20px;
+        }
+        .add-promo-code{
+          display: flex;
+          justify-content: center;
+        }
+        .promocode-name{
+          display: flex;
+          flex-direction: column;
+        }
+        .promocode-suma{
+          display: flex;
+          flex-direction: column;
+        }
+        .send{
+          display: flex;
+          margin: auto;
+          width: 20%;
+        }
+      }
+    }
+  }
+}

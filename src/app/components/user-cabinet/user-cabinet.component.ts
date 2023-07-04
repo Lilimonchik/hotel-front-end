@@ -31,4 +31,8 @@ export  class UserCabinetComponent implements OnInit{
   logOut(){
     return this.auth.logout();
   }
+
+  checkUser(user: User):boolean{
+    return this.auth.checkUser(user);
+  }
 }

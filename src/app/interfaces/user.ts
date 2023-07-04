@@ -1,3 +1,5 @@
+import {Role} from "../DTO/UserDTO";
+
 export class User{
   firstName: string;
   name: string;
@@ -5,5 +7,5 @@ export class User{
   birthday: string;
   userName: string;
   password: string;
-  role: number;
+  role: Role;
 }

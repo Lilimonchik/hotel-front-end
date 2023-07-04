@@ -30,7 +30,7 @@
     color: #fce77e;
 
     .left-content {
-      width: 30%;
+      width: 10%;
       display: flex;
       justify-content: space-between;
 
@@ -46,6 +46,12 @@
       .routLink:hover {
         text-decoration: underline;
       }
+    }
+    .name-hotel{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      font-size: 30px;
     }
 
     .spacer {
@@ -63,6 +69,17 @@
       .cabinet{
         color: #fce77e;
         margin-left: 7px;
+      }
+    }
+  }
+}
+@media (max-width: 900px) {
+  .content{
+    .toolbar {
+    }
+    .laptop-content{
+      .name-hotel{
+        font-size: 25px;
       }
     }
   }

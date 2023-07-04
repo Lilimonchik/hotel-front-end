@@ -6,26 +6,29 @@
           <mat-menu #menu="matMenu">
             <button mat-menu-item routerLink="/">Home</button>
             <button mat-menu-item routerLink="/rooms">Room</button>
-            <button mat-menu-item *ngIf="isAuthenticated()" routerLink="/cart">Cart</button>
-            <button mat-menu-item *ngIf="isAuthenticated()" routerLink="/order">Order</button>
-            <button mat-menu-item *ngIf="isAuthenticated()" routerLink="/info-about-user">Information</button>
+            <button mat-menu-item *ngIf="isAuthenticated() && checkUser(userInfo)" routerLink="/cart">Cart</button>
+            <button mat-menu-item *ngIf="isAuthenticated() && checkUser(userInfo)" routerLink="/order">Order</button>
+            <button mat-menu-item *ngIf="isAuthenticated()  && checkUser(userInfo)" routerLink="/info-about-user">Information</button>
+            <button mat-menu-item *ngIf="isAuthenticated()  && !checkUser(userInfo)" routerLink="/all-orders">All Orders</button>
+            <button mat-menu-item *ngIf="isAuthenticated()  && !checkUser(userInfo)" routerLink="/all-users">All Users</button>
+            <button mat-menu-item *ngIf="isAuthenticated()  && !checkUser(userInfo)" routerLink="/">Add Promo-code</button>
+            <button mat-menu-item *ngIf="isAuthenticated()  && !checkUser(userInfo)" routerLink="/">Add Discount</button>
             <button mat-menu-item *ngIf="isAuthenticated()" (click)="logOut()">Log Out</button>
           </mat-menu>
           <span class="name-hotel">Verginia Sharm Hotel</span>
           <span class="spacer"></span>
           <button mat-raised-button class="registration" routerLink="/registration-page" *ngIf="!isAuthenticated()">Registration</button>
           <button mat-raised-button routerLink="/sing-in" *ngIf="!isAuthenticated()">Sing In</button>
-          <button mat-raised-button class="registration" routerLink="/cart" *ngIf="isAuthenticated()">Cabinet</button>
+          <button mat-raised-button class="registration"  routerLink="/cart" *ngIf="isAuthenticated() && checkUser(userInfo)">Cabinet</button>
+          <button mat-raised-button class="registration"  routerLink="/all-orders" *ngIf="isAuthenticated() && !checkUser(userInfo)">Cabinet</button>
           <button mat-raised-button (click)="logOut()" *ngIf="isAuthenticated()">LogOut</button>
   </mat-toolbar>
   <mat-toolbar class="laptop-content">
     <div class="left-content">
       <span><a class="routLink"  routerLink="/">Home</a></span>
-      <span><a class="routLink" routerLink="">Category</a></span>
       <span><a class="routLink" routerLink="/rooms">Rooms</a></span>
-      <span><a class="routLink" routerLink="">Contact</a></span>
-      <span><a class="routLink" routerLink="/">About Us</a></span>
     </div>
+    <span class="name-hotel">Verginia Sharm Hotel</span>
     <span class="spacer"></span>
     <div  class="right-content" *ngIf="!isAuthenticated()">
       <button mat-icon-button class="button-first" (click)="openDialog()">
@@ -38,7 +41,8 @@
       </button>
     </div>
     <div class="right-content" *ngIf="isAuthenticated()">
-      <span><a routerLink="/cart" class="cabinet">Cabinet</a></span>
+      <span><a routerLink="/cart" class="cabinet" *ngIf="checkUser(userInfo)">Cabinet</a></span>
+      <span><a routerLink="/all-orders" class="cabinet" *ngIf="!checkUser(userInfo)">Cabinet</a></span>
       <span><a routerLink="/" class="cabinet" (click)="logOut()">LogOut</a></span>
     </div>
   </mat-toolbar>

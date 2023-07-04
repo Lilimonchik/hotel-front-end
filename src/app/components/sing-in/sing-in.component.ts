@@ -6,6 +6,7 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
 import {enviroment} from "../../../environments/enviroment";
 import {RoomsstoreService} from "../../services/roomsstore.service";
 import {User} from "../../interfaces/user";
+import {Role} from "../../DTO/UserDTO";
 @Component({
   selector: 'app-sing-in',
   templateUrl:'./sing-in.component.html',
@@ -22,6 +23,8 @@ export class SingInComponent implements OnInit{
 
   public  userInfo: User;
   public isSingIn: boolean = false;
+
+
   ngOnInit() {
     this.singInForm = new FormGroup({
       userName: new FormControl('',[Validators.required]),
@@ -44,10 +47,10 @@ export class SingInComponent implements OnInit{
       })
   }
   check(){
-    if(this.userInfo.role==1){
+    if(this.userInfo.role== Role.admin){
       this.router.navigate(['/all-orders']);
     }
-    else if(this.userInfo.role==0){
+    else if(this.userInfo.role==Role.user){
       this.router.navigate(['/cart']);
     }
   }

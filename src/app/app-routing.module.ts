@@ -14,6 +14,8 @@ import {RegistrationPageComponent} from "./components/registration-page/registra
 import {RoomDetailsComponent} from "./components/room-details/room-details.component";
 import {AllOrdersComponent} from "./components/all-orders/all-orders.component";
 import {AllUsersComponent} from "./components/all-users/all-users.component";
+import {AddPromoCodeComponent} from "./components/add-promo-code/add-promo-code.component";
+import {AddDiscountComponent} from "./components/add-discount/add-discount.component";
 
 const routes: Routes =[
   {path:'', component:HomeComponent, title: 'home'},
@@ -30,6 +32,8 @@ const routes: Routes =[
   { path: 'rooms/:id', component: RoomDetailsComponent },
   {path: 'all-orders', component: AllOrdersComponent, title: 'all-orders'},
   {path: 'all-users', component: AllUsersComponent, title: 'All-users'},
+  {path: 'add-promo-code', component: AddPromoCodeComponent, title:'Add Promo-code'},
+  {path: 'add-discount', component: AddDiscountComponent, title: 'Add Discount'},
 
 
   {path: "**", redirectTo:''}

@@ -5,5 +5,10 @@ export class UserDTO{
   email: string
   birthday: string
   userName: string
-  role: number
+  role: Role;
+}
+
+export enum Role{
+  user,
+  admin
 }
